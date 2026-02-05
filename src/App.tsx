@@ -47,7 +47,6 @@ const App = () => {
     return () => observer.disconnect();
   }, []);
 
-  const EMAIL = "jmurphy2591@gmail.com";
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = async () => {
@@ -91,9 +90,9 @@ const App = () => {
           </a>
 
           <a
-            href="#resume"
+            href="/Joe_Murphy_Resume.docx"
             className="nav-pill-link"
-            onClick={(e) => handleAnchorClick(e, "resume")}
+            download="Joe_Murphy_Resume.docx"
           >
             Resume
           </a>
@@ -284,10 +283,7 @@ const App = () => {
                 <div className="project-logo-placeholder">Logo</div>
               </div>
 
-              <p className="project-desc">
-                Description placeholder for the project goes here explaining the
-                core functionality.
-              </p>
+              <p className="project-desc">{project.description}</p>
 
               <div className="project-tags">
                 {project.tags.map((tag: string) => (

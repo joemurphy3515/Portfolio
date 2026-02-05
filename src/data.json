@@ -59,50 +59,73 @@
             ]
         }
     ],
-    "projects": [
-        {
-            "name": "Project Alpha",
-            "tags": [
-                "React",
-                "Node.js",
-                "Firebase"
-            ]
-        },
-        {
-            "name": "Beta App",
-            "tags": [
-                "SwiftUI",
-                "CoreData"
-            ]
-        },
-        {
-            "name": "Gamma Tools",
-            "tags": [
-                "Python",
-                "FastAPI",
-                "Docker"
-            ]
-        },
-        {
-            "name": "Delta UI",
-            "tags": [
-                "Figma",
-                "Design System"
-            ]
-        },
-        {
-            "name": "Epsilon Dash",
-            "tags": [
-                "Vue",
-                "D3.js"
-            ]
-        },
-        {
-            "name": "Zeta Script",
-            "tags": [
-                "TypeScript",
-                "AWS"
-            ]
-        }
-    ]
+ "projects": [
+    {
+        "name": "Augio",
+        "description": "A native iOS music streaming, discovery, and curation platform focused on helping independent artists reach new listeners through regional charts and editorial discovery.",
+        "tags": [
+            "iOS",
+            "Swift",
+            "SwiftUI",
+            "MVVM",
+            "Node.js",
+            "Express",
+            "Firebase",
+            "Google Cloud"
+        ]
+    },
+    {
+        "name": "TasteTrail",
+        "description": "A social foodie platform for discovering, rating, and recommending restaurants, with features for sharing experiences and exploring new places with friends.",
+        "tags": [
+            "iOS",
+            "Swift",
+            "SwiftUI",
+            "MVVM",
+            "Firebase",
+            "Node.js",
+            "Google Cloud"
+        ]
+    },
+    {
+        "name": "Prism Finance",
+        "description": "A web-based financial analysis and tracking platform built to aggregate, analyze, and visualize personal investment and market data.",
+        "tags": [
+            "React",
+            "Python",
+            "FastAPI",
+            "Firebase",
+            "Postgres",
+            "Subscriptions",
+            "Sevalla"
+        ]
+    },
+    {
+        "name": "CardioLog",
+        "description": "A native mobile cardiovascular health log designed to help individuals track, monitor, and manage key heart health metrics over time.",
+        "tags": [
+            "iOS",
+            "Swift",
+            "SwiftUI",
+            "SwiftData",
+            "MVVM"
+        ]
+    },
+    {
+        "name": "Quil",
+        "description": "A white-label native mobile platform for authors to host audiobooks, manage subscriptions, sell digital content, and engage directly with their audience.",
+        "tags": [
+            "iOS",
+            "Swift",
+            "SwiftUI",
+            "MVVM",
+            "Node.js",
+            "Firebase",
+            "Google Cloud",
+            "Subscriptions",
+            "E-commerce",
+            "Audio Playback"
+        ]
+    }
+]
 }
