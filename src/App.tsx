@@ -1,84 +1,15 @@
 import React, { useState } from "react";
 import { Github } from "lucide-react";
+import data from "./data.json";
+
 import "./App.css";
 
 const App = () => {
   const [activeWorkIndex, setActiveWorkIndex] = useState(0);
 
-  const workHistory = [
-    {
-      company: "Ford",
-      role: "Product Owner @ Ford",
-      period: "Jan 2023 - Present",
-      description:
-        "Led cross-functional teams to ship enterprise-scale solutions. Bridge the gap between engineering, design, and business strategy.",
-      highlights: [
-        "Managed roadmap for enterprise connectivity tools.",
-        "Reduced technical debt by 20% through strategic refactoring.",
-        "Facilitated agile ceremonies for a team of 15 developers.",
-      ],
-    },
-    {
-      company: "iOS Engineer",
-      role: "Senior iOS Engineer",
-      period: "2021 - 2023",
-      description:
-        "Built native mobile experiences focusing on performance and animations.",
-      highlights: [
-        "Developed features for high-traffic consumer app.",
-        "Implemented CI/CD pipelines for mobile build delivery.",
-      ],
-    },
-    {
-      company: "Full Stack Engineer",
-      role: "Full Stack Developer",
-      period: "2019 - 2021",
-      description: "End-to-end development using MERN stack.",
-      highlights: [
-        "Built RESTful APIs.",
-        "Designed responsive front-end layouts.",
-      ],
-    },
-    {
-      company: "AndPlus",
-      role: "Software Engineer",
-      period: "2018 - 2019",
-      description: "Consultancy engineering.",
-      highlights: ["Client facing role."],
-    },
-    {
-      company: "Kortx",
-      role: "Frontend Dev",
-      period: "2017 - 2018",
-      description: "Ad-tech solutions.",
-      highlights: ["React based dashboard."],
-    },
-    {
-      company: "Latcha",
-      role: "Web Developer",
-      period: "2016 - 2017",
-      description: "Agency work.",
-      highlights: ["Marketing sites."],
-    },
-    {
-      company: "GTB",
-      role: "Intern",
-      period: "2015 - 2016",
-      description: "General IT support.",
-      highlights: ["System admin tasks."],
-    },
-  ];
-
-  const projects = [
-    { name: "Project Alpha", tags: ["React", "Node.js", "Firebase"] },
-    { name: "Beta App", tags: ["SwiftUI", "CoreData"] },
-    { name: "Gamma Tools", tags: ["Python", "FastAPI", "Docker"] },
-    { name: "Delta UI", tags: ["Figma", "Design System"] },
-    { name: "Epsilon Dash", tags: ["Vue", "D3.js"] },
-    { name: "Zeta Script", tags: ["TypeScript", "AWS"] },
-  ];
-
-  const activeJob = workHistory[activeWorkIndex];
+ const workHistory = data.workHistory;
+ const projects = data.projects;
+ const activeJob = workHistory[activeWorkIndex];
 
   return (
     <div className="app-container">
