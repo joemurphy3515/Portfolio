@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className="app-container">
       <nav className="navbar">
-        <div className="logo">JM</div>
+        <div className="logo">Joe Murphy</div>
         <div className="nav-pill">
           <a href="#home" className="nav-pill-link nav-pill-link--active">
             Home

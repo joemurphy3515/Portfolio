@@ -1,70 +1,61 @@
 {
     "workHistory": [
         {
-            "company": "Ford",
-            "role": "Product Owner @ Ford",
-            "period": "Jan 2023 - Present",
-            "description": "Led cross-functional teams to ship enterprise-scale solutions. Bridge the gap between engineering, design, and business strategy.",
+            "company": "Ford Motor Company",
+            "role": "Product Owner",
+            "period": "Jan 2023 – Present",
+            "description": "Own the end-to-end service scheduling experience across FordPass, Ford.com, and dealer web platforms, driving measurable improvements in dealer efficiency and customer satisfaction.",
             "highlights": [
-                "Managed roadmap for enterprise connectivity tools.",
-                "Reduced technical debt by 20% through strategic refactoring.",
-                "Facilitated agile ceremonies for a team of 15 developers."
-            ]
-        },
-        {
-            "company": "iOS Engineer",
-            "role": "Senior iOS Engineer",
-            "period": "2021 - 2023",
-            "description": "Built native mobile experiences focusing on performance and animations.",
-            "highlights": [
-                "Developed features for high-traffic consumer app.",
-                "Implemented CI/CD pipelines for mobile build delivery."
-            ]
-        },
-        {
-            "company": "Full Stack Engineer",
-            "role": "Full Stack Developer",
-            "period": "2019 - 2021",
-            "description": "End-to-end development using MERN stack.",
-            "highlights": [
-                "Built RESTful APIs.",
-                "Designed responsive front-end layouts."
+                "Reduced average reservation booking time from 6 minutes to 3.5 minutes across the dealer network.",
+                "Increased kept-appointment rates by 20% through proactive customer communication features that reduced no-shows.",
+                "Led a cross-functional team of 30+ (engineering, design, QA) achieving 95% on-time delivery across 76 Agile sprints.",
+                "Defined product vision and roadmap using competitive benchmarking, user insights, and performance metrics.",
+                "Owned and prioritized the product backlog, balancing customer feedback, business goals, and analytics-driven insights.",
+                "Partnered with UX/UI to validate concepts, optimize user flows, and improve customer and dealer experiences.",
+                "Translated strategic objectives into prioritized features and user stories for consistent, high-quality delivery.",
+                "Facilitated cross-functional workshops to align stakeholders on scope, KPIs, and success metrics."
             ]
         },
         {
             "company": "AndPlus",
-            "role": "Software Engineer",
-            "period": "2018 - 2019",
-            "description": "Consultancy engineering.",
+            "role": "Senior Technical Project Manager",
+            "period": "Dec 2021 – Dec 2022",
+            "description": "Led end-to-end delivery of web and mobile products for enterprise clients, translating complex business needs into actionable roadmaps and backlogs.",
             "highlights": [
-                "Client facing role."
+                "Drove delivery of web and mobile products by converting business requirements into clear product roadmaps.",
+                "Partnered with stakeholders to define MVP scope, prioritize enhancements, and align on business outcomes.",
+                "Collaborated with UX and engineering to refine designs for usability and technical feasibility.",
+                "Managed multiple Agile teams, overseeing sprints, burndown metrics, and delivery timelines.",
+                "Introduced structured feedback loops that improved delivery quality and reduced post-launch issues.",
+                "Led product discovery and iterative development to deliver scalable, user-centered solutions."
             ]
         },
         {
             "company": "Kortx",
-            "role": "Frontend Dev",
-            "period": "2017 - 2018",
-            "description": "Ad-tech solutions.",
+            "role": "Technical Project Manager",
+            "period": "May 2020 – Dec 2021",
+            "description": "Managed large-scale software initiatives including analytics platforms, marketing automation tools, and client-facing applications.",
             "highlights": [
-                "React based dashboard."
+                "Led multiple large-scale initiatives across internal analytics tools and marketing platforms.",
+                "Partnered with leadership to define product vision and roadmaps aligned with business objectives.",
+                "Collaborated with engineering and design to define user stories, acceptance criteria, and release plans.",
+                "Facilitated Agile ceremonies and prioritization workshops to improve sprint velocity and delivery transparency.",
+                "Used data and user insights to identify features that increased engagement and improved customer experience.",
+                "Strengthened collaboration between technical and non-technical teams to improve time-to-market."
             ]
         },
         {
-            "company": "Latcha",
-            "role": "Web Developer",
-            "period": "2016 - 2017",
-            "description": "Agency work.",
+            "company": "Latcha & Associates",
+            "role": "Technical Project Manager",
+            "period": "Nov 2018 – Mar 2020",
+            "description": "Oversaw development of Audi’s CRM web application, managing the full product lifecycle from scope definition through launch.",
             "highlights": [
-                "Marketing sites."
-            ]
-        },
-        {
-            "company": "GTB",
-            "role": "Intern",
-            "period": "2015 - 2016",
-            "description": "General IT support.",
-            "highlights": [
-                "System admin tasks."
+                "Managed the product lifecycle for Audi’s CRM web application from definition through launch.",
+                "Defined product requirements, features, and release plans with creative, data, and engineering teams.",
+                "Coordinated UX, data, and engineering efforts to optimize workflows and ensure scalability.",
+                "Facilitated sprint planning, retrospectives, and cross-functional collaboration.",
+                "Served as product liaison between internal teams and the client.",
+                "Ensured data accuracy, platform performance, and release quality through QA oversight."
             ]
         }
     ],
