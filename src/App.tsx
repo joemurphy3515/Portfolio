@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Github, ExternalLink } from "lucide-react";
+import { Github } from "lucide-react";
 import "./App.css";
 
 const App = () => {
@@ -78,23 +78,33 @@ const App = () => {
     { name: "Zeta Script", tags: ["TypeScript", "AWS"] },
   ];
 
+  const activeJob = workHistory[activeWorkIndex];
+
   return (
     <div className="app-container">
       <nav className="navbar">
         <div className="logo">JM</div>
         <div className="nav-pill">
-          <a href="#home" className="active">
+          <a href="#home" className="nav-pill-link nav-pill-link--active">
             Home
           </a>
-          <a href="#about">About</a>
-          <a href="#work">Work</a>
-          <a href="#resume">Resume</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" className="nav-pill-link">
+            About
+          </a>
+          <a href="#work" className="nav-pill-link">
+            Work
+          </a>
+          <a href="#resume" className="nav-pill-link">
+            Resume
+          </a>
+          <a href="#contact" className="nav-pill-link">
+            Contact
+          </a>
         </div>
       </nav>
 
-      <header className="hero">
-        <h1>
+      <header className="hero" id="home">
+        <h1 className="hero-title">
           The
           <br />
           Full-Stack
@@ -108,15 +118,13 @@ const App = () => {
         </p>
       </header>
 
-      <div className="blue-circle"></div>
-      <div className="green-circle"></div>
-
-     {/*<div className="hero-glow"></div>*/}
+      <div className="blue-circle" />
+      <div className="green-circle" />
 
       <section className="section-container" id="work">
         <div className="section-header">
-          <div className="vertical-bar"></div>
-          <h2>Work</h2>
+          <div className="vertical-bar" />
+          <h2 className="section-title">Work</h2>
         </div>
 
         <div className="work-layout">
@@ -124,88 +132,128 @@ const App = () => {
             {workHistory.map((job, index) => (
               <button
                 key={index}
-                className={`work-tab ${activeWorkIndex === index ? "active" : ""}`}
+                className={`work-tab ${activeWorkIndex === index ? "work-tab--active" : ""}`}
                 onClick={() => setActiveWorkIndex(index)}
+                type="button"
               >
                 {job.company}
               </button>
             ))}
           </div>
+
           <div className="work-content">
-            <h3>{workHistory[activeWorkIndex].role}</h3>
-            <span className="work-date">
-              {workHistory[activeWorkIndex].period}
-            </span>
-            <p className="work-desc">
-              {workHistory[activeWorkIndex].description}
-            </p>
+            <h3 className="work-role">{activeJob.role}</h3>
+            <span className="work-date">{activeJob.period}</span>
+            <p className="work-desc">{activeJob.description}</p>
             <ul className="work-list">
-              {workHistory[activeWorkIndex].highlights.map((point, i) => (
-                <li key={i}>{point}</li>
+              {activeJob.highlights.map((point, i) => (
+                <li className="work-list-item" key={i}>
+                  {point}
+                </li>
               ))}
             </ul>
           </div>
         </div>
       </section>
 
-      <section className="section-container">
-        <h2 className="big-outline-text">What I Do</h2>
-        <p className="section-subtext">
-          Product to Engineering to Design to Operations
-        </p>
+      <section className="section-container what-i-do">
+        <div className="what-header">
+          <h2 className="big-outline-text">What I Do</h2>
+          <p className="section-subtext">
+            From Product to Engineering to Design to Operations
+          </p>
+        </div>
 
-        <div className="cards-stack">
-          <div className="feature-card card-pm">
-            <h3>Product Manager/Owner</h3>
-            <p>
-              I operate at the intersection of product strategy and delivery
-              execution. While traditional Product Managers focus on vision, I
-              bridge both roles to ensure ideas move seamlessly from concept to
-              customer impact.
-            </p>
-            <p className="small-text">
-              My experience spans defining product vision, aligning
-              stakeholders, and validating user needs while translating strategy
-              into clear requirements.
-            </p>
-          </div>
+        <div className="folders-stack">
+          <article className="folder-card folder-pm">
+            <div className="folder-tab">
+              <span className="folder-tab-text">Product Manager/Owner</span>
+            </div>
 
-          <div className="feature-card card-eng">
-            <h3>Hybrid Software engineering</h3>
-            <p>
-              I bring hands-on software engineering experience across both
-              native mobile and full-stack web platforms. My technical
-              background includes building production iOS applications using
-              Swift and SwiftUI.
-            </p>
-            <p className="small-text">
-              I have experience designing application architecture, integrating
-              third-party APIs, and building serverless backend services.
-            </p>
-          </div>
+            <div className="folder-body">
+              <p className="folder-body-text">
+                I operate at the intersection of product strategy and delivery
+                execution. While traditional Product Managers focus on vision
+                and market strategy, and Product Owners focus on backlog
+                execution and sprint delivery, I bridge both roles to ensure
+                ideas move seamlessly from concept to customer impact.
+              </p>
+              <p className="folder-body-text folder-body-text--small">
+                My experience spans defining product vision, aligning
+                stakeholders, and validating user needs, while also translating
+                strategy into clear requirements, prioritizing backlogs, and
+                working closely with engineering and design teams to deliver
+                high-quality solutions. This dual perspective allows me to
+                maintain strategic alignment while ensuring consistent,
+                efficient execution.
+              </p>
+            </div>
+          </article>
 
-          <div className="feature-card card-design">
-            <h3>UI/UX Design</h3>
-            <p>
-              I design end-to-end digital experiences across web, mobile, and
-              platform-based products. My work includes user interface design,
-              user experience strategy, and brand development.
-            </p>
-            <p className="small-text">
-              I utilize tools like Figma, Adobe XD, and Sketch to create
-              wireframes, high-fidelity designs, and interactive prototypes.
-            </p>
-          </div>
+          <article className="folder-card folder-eng">
+            <div className="folder-tab">
+              <span className="folder-tab-text">
+                Hybrid Software Engineering
+              </span>
+            </div>
+
+            <div className="folder-body">
+              <p className="folder-body-text">
+                I bring hands-on software engineering experience across both
+                native mobile and full-stack web platforms. My technical
+                background includes building production iOS applications using
+                Swift and SwiftUI, alongside designing and developing scalable
+                web applications using React, TypeScript, Node.js, Python, and
+                cloud-based backend services like FIrebase.
+              </p>
+              <p className="folder-body-text folder-body-text--small">
+                I have experience designing application architecture,
+                integrating third-party APIs, building serverless backend
+                services, and developing full-stack backend systems using
+                Node.js with Express and Python with FastAPI. I’ve worked
+                extensively with real-time data platforms such as Firebase and
+                modern cloud infrastructure to support scalable, data-driven
+                applications. This cross-platform experience allows me to
+                understand system design end-to-end and collaborate effectively
+                across engineering, design, and product teams.
+              </p>
+            </div>
+          </article>
+
+          <article className="folder-card folder-design">
+            <div className="folder-tab">
+              <span className="folder-tab-text">UI/UX Design</span>
+            </div>
+
+            <div className="folder-body">
+              <p className="folder-body-text">
+                I design end-to-end digital experiences across web, mobile, and
+                platform-based products. My work includes user interface design,
+                user experience strategy, and brand development to ensure
+                consistent and engaging product experiences.
+              </p>
+              <p className="folder-body-text folder-body-text--small">
+                I’ve designed a wide range of applications including
+                consumer-facing products, internal enterprise tools, and
+                scalable platform ecosystems. I use tools such as Figma, Adobe
+                XD, Sketch, Photoshop, and Illustrator to create wireframes,
+                high-fidelity designs, interactive prototypes, and brand assets.
+                My design process blends user research, usability principles,
+                and product strategy to deliver intuitive, high-impact
+                experiences.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
       <section className="section-container">
-        <div className="section-header space-between">
-          <div className="flex-align">
-            <div className="vertical-bar"></div>
-            <h2>Venture Projects</h2>
+        <div className="section-header section-header--space-between">
+          <div className="section-header-left">
+            <div className="vertical-bar" />
+            <h2 className="section-title">Venture Projects</h2>
           </div>
-          <button className="github-btn">
+          <button className="github-btn" type="button">
             <Github size={18} /> Github
           </button>
         </div>
@@ -214,7 +262,7 @@ const App = () => {
           {projects.map((project, index) => (
             <div className="project-card" key={index}>
               <div className="project-header">
-                <h4>{project.name}</h4>
+                <h4 className="project-title">{project.name}</h4>
                 <div className="project-logo-placeholder">Logo</div>
               </div>
               <p className="project-desc">
@@ -223,7 +271,9 @@ const App = () => {
               </p>
               <div className="project-tags">
                 {project.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
+                  <span className="project-tag" key={tag}>
+                    {tag}
+                  </span>
                 ))}
               </div>
             </div>
@@ -231,12 +281,14 @@ const App = () => {
         </div>
       </section>
 
-      <footer className="footer">
-        <h2>Connect With Me</h2>
-        <p>
+      <footer className="footer" id="contact">
+        <h2 className="footer-title">Connect With Me</h2>
+        <p className="footer-subtitle">
           Open to consulting, full-time positions, advisory roles, and coffee.
         </p>
-        <button className="cta-btn">Get In Touch</button>
+        <button className="cta-btn" type="button">
+          Get In Touch
+        </button>
       </footer>
     </div>
   );
