@@ -174,16 +174,41 @@ body {
 }
 
 .hero {
-  position: relative;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   overflow: hidden;
+  margin: 200px 0 0 0;
   padding: 0;
   padding-bottom: 5vh;
+}
+
+.blue-circle {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-color: #2064e1;
+  border-radius: 50%;
+  top: -100px;
+  left: -150px;
+  z-index: -1;
+  filter: blur(120px);
+  opacity: 0.6;
+}
+
+.green-circle {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: #20e1a8;
+  border-radius: 50%;
+  top: 300px;
+  right: -100px;
+  z-index: -1;
+  filter: blur(120px);
+  opacity: 0.5;
 }
 
 .hero-glow {
