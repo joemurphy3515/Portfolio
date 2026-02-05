@@ -125,8 +125,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 0;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 1200px;
+  z-index: 10;
+
+  padding: 30px 20px;
 }
 
 .logo {
@@ -166,48 +174,56 @@ body {
 }
 
 .hero {
-  text-align: center;
-  padding: 100px 0;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 0;
+  padding-bottom: 5vh;
 }
 
 .hero-glow {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 900px;
-  height: 500px;
+  height: 100%;
   z-index: -1;
   pointer-events: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: transparent;
+
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
-.hero-glow::before {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: #2064e1;
-  border-radius: 50%;
-  filter: blur(150px);
-  opacity: 0.6;
-  transform: translateX(-30%);
-}
-
+.hero-glow::before,
 .hero-glow::after {
   content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
+  bottom: -40%;
+  width: 150%;
+  height: 60%;
+  border-radius: 100%;
+
+  filter: blur(300px);
+
+  opacity: 0.6;
+}
+
+.hero-glow::before {
+  left: -25%;
+  background: #2064e1;
+  transform: rotate(-10deg);
+}
+
+.hero-glow::after {
+  right: -25%;
   background: #20e1a8;
-  border-radius: 50%;
-  filter: blur(150px);
-  opacity: 0.5;
-  transform: translateX(30%);
+  transform: rotate(10deg);
 }
 
 .hero h1 {
