@@ -1,10 +1,28 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Github } from "lucide-react";
+import {
+  Github,
+  Compass,
+  Code2,
+  PenTool,
+  Music,
+  UtensilsCrossed,
+  DollarSign,
+  Heart,
+  Feather,
+} from "lucide-react";
 import data from "./data.json";
 import "./App.css";
 
 const App = () => {
   const navRef = useRef<HTMLElement | null>(null);
+
+  const iconMap: Record<string, React.ReactNode> = {
+    music: <Music size={20} strokeWidth={1.8} />,
+    utensils: <UtensilsCrossed size={20} strokeWidth={1.8} />,
+    dollar: <DollarSign size={20} strokeWidth={1.8} />,
+    heart: <Heart size={20} strokeWidth={1.8} />,
+    feather: <Feather size={20} strokeWidth={1.8} />,
+  };
 
   const [activeSection, setActiveSection] = useState<
     "home" | "work" | "ventures" | "contact"
@@ -218,7 +236,7 @@ const App = () => {
           <article className="cap-card">
             <div className="cap-top">
               <div className="cap-icon" aria-hidden="true">
-                ◆
+                <Compass size={18} strokeWidth={1.8} />
               </div>
               <div>
                 <h3 className="cap-title">Product Manager / Owner</h3>
@@ -228,7 +246,6 @@ const App = () => {
                 </p>
               </div>
             </div>
-
             <ul className="cap-points">
               <li>
                 Vision, roadmap, and prioritization grounded in insights +
@@ -245,7 +262,7 @@ const App = () => {
           <article className="cap-card">
             <div className="cap-top">
               <div className="cap-icon" aria-hidden="true">
-                ⬣
+                <Code2 size={18} strokeWidth={1.8} />
               </div>
               <div>
                 <h3 className="cap-title">Hybrid Software Engineering</h3>
@@ -264,12 +281,12 @@ const App = () => {
               </li>
             </ul>
           </article>
-
           <article className="cap-card">
             <div className="cap-top">
               <div className="cap-icon" aria-hidden="true">
-                ◼
+                <PenTool size={18} strokeWidth={1.8} />
               </div>
+
               <div>
                 <h3 className="cap-title">UI/UX Design</h3>
                 <p className="cap-summary">
@@ -311,7 +328,9 @@ const App = () => {
             <div className="project-card" key={index}>
               <div className="project-header">
                 <h4 className="project-title">{project.name}</h4>
-                <div className="project-logo-placeholder">Logo</div>
+                <div className="project-logo-placeholder">
+                  {iconMap[project.icon]}
+                </div>
               </div>
 
               <p className="project-desc">{project.description}</p>

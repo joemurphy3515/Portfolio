@@ -248,7 +248,7 @@ body {
     rgba(59, 130, 246, 0.85) 25%,
     rgba(59, 130, 246, 0.5) 45%,
     rgba(59, 130, 246, 0.15) 65%,
-    rgba(59, 130, 246, 0.0) 80%
+    rgba(59, 130, 246, 0) 80%
   );
 
   filter: blur(170px);
@@ -267,7 +267,7 @@ body {
     rgba(32, 225, 168, 0.85) 25%,
     rgba(32, 225, 168, 0.5) 45%,
     rgba(32, 225, 168, 0.15) 65%,
-    rgba(32, 225, 168, 0.0) 80%
+    rgba(32, 225, 168, 0) 80%
   );
 
   filter: blur(170px);
@@ -447,7 +447,9 @@ body {
   backdrop-filter: blur(10px);
   padding: 18px 18px 16px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, border-color 0.25s ease,
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
     background-color 0.25s ease;
 }
 
@@ -526,8 +528,11 @@ body {
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color 0.25s ease, color 0.25s ease,
-    border-color 0.25s ease, transform 0.2s ease;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
 }
 
 .github-btn:hover {
@@ -682,7 +687,7 @@ body {
     );
   }
 
-   .navbar {
+  .navbar {
     position: fixed;
     top: 0;
     left: 0;

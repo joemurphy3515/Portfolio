@@ -86,7 +86,8 @@
             "Express",
             "Firebase",
             "Google Cloud"
-        ]
+        ],
+        "icon": "music"
     },
     {
         "name": "TasteTrail",
@@ -99,7 +100,8 @@
             "Firebase",
             "Node.js",
             "Google Cloud"
-        ]
+        ],
+        "icon": "utensils"
     },
     {
         "name": "Prism Finance",
@@ -112,7 +114,8 @@
             "Postgres",
             "Subscriptions",
             "Sevalla"
-        ]
+        ],
+        "icon": "dollar"
     },
     {
         "name": "CardioLog",
@@ -123,7 +126,8 @@
             "SwiftUI",
             "SwiftData",
             "MVVM"
-        ]
+        ],
+        "icon": "heart"
     },
     {
         "name": "Quil",
@@ -136,10 +140,9 @@
             "Node.js",
             "Firebase",
             "Google Cloud",
-            "Subscriptions",
-            "E-commerce",
-            "Audio Playback"
-        ]
+            "E-commerce"
+        ],
+        "icon": "feather"
     }
 ]
 }
