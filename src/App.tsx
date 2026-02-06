@@ -171,9 +171,11 @@ const App = () => {
           Product
         </h1>
         <p className="hero-subtitle">
-          I don&apos;t just manage the roadmap; I design, code, and launch it.
-          From enterprise scale to startup speed, I welcome the mountains that
-          slow others down.
+          For more than a decade, I’ve been building across product, design, and
+          engineering, not just understanding how software works, but how it’s
+          imagined, built, and brought to life. I’m driven by curiosity,
+          obsessed with improvement, and always looking for the next meaningful
+          challenge.
         </p>
       </header>
 
