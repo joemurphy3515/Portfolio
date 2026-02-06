@@ -4,16 +4,36 @@
             "company": "Ford Motor Company",
             "role": "Product Owner",
             "period": "Jan 2023 – Present",
-            "description": "Own the end-to-end service scheduling experience across FordPass, Ford.com, and dealer web platforms, driving measurable improvements in dealer efficiency and customer satisfaction.",
+            "description": "Own the end-to-end service scheduling ecosystem spanning customer booking, dealer scheduling, service operations, customer communications, and pickup & delivery integrations across Ford Service Reservation+ platform for U.S. dealers.",
             "highlights": [
-                "Reduced average reservation booking time from 6 minutes to 3.5 minutes across the dealer network.",
-                "Increased kept-appointment rates by 20% through proactive customer communication features that reduced no-shows.",
-                "Led a cross-functional team of 30+ (engineering, design, QA) achieving 95% on-time delivery across 76 Agile sprints.",
-                "Defined product vision and roadmap using competitive benchmarking, user insights, and performance metrics.",
-                "Owned and prioritized the product backlog, balancing customer feedback, business goals, and analytics-driven insights.",
-                "Partnered with UX/UI to validate concepts, optimize user flows, and improve customer and dealer experiences.",
-                "Translated strategic objectives into prioritized features and user stories for consistent, high-quality delivery.",
-                "Facilitated cross-functional workshops to align stakeholders on scope, KPIs, and success metrics."
+                "Cut average service reservation booking time from 6 minutes to 3.5 minutes across Ford’s dealer network.",
+                "Increased kept-appointment rates by 20% through proactive customer communication and no-show reduction features.",
+                "Led a cross-functional team of 30+ across engineering, design, and QA, achieving 95% on-time delivery over 76 Agile sprints.",
+                "Defined product vision and roadmap using customer insights, competitive benchmarking, and performance metrics."
+            ]
+        },
+        {
+            "company": "Fuse Ventures",
+            "role": "Product Manager & Software Engineer",
+            "period": "Venture Studio - Present",
+            "description": "Partnered with early-stage ventures to shape product strategy, design, and engineering for consumer-ready web and mobile products.",
+            "highlights": [
+                "Helped define and guide product strategy through discovery, research, and customer outreach to validate concepts and identify market-fit opportunities.",
+                "Architected and implemented software solutions across web and mobile platforms, supporting products from initial development through redesigns and launches.",
+                "Led UX/UI design efforts, translating user research and product requirements into intuitive, scalable interfaces.",
+                "Collaborated closely with founders and stakeholders to iterate on features, refine positioning, and deliver consumer-ready products."
+            ]
+        },
+        {
+            "company": "Augio",
+            "role": "Founder / Product & iOS Engineer",
+            "period": "Startup Venture - Present",
+            "description": "Built and launched a music discovery and streaming platform from concept through delivery, owning product strategy, design, engineering, and go-to-market execution.",
+            "highlights": [
+                "Designed and developed a native iOS application using Swift, SwiftUI, and MVVM, supported by a scalable backend built with Node.js, Express, Firebase, and Google Cloud services.",
+                "Led end-to-end product development across mobile and web platforms, including web-based tools and marketing experiences to support artist onboarding and platform growth.",
+                "Owned the full product lifecycle from ideation and UX/UI design through development, deployment, and iteration.",
+                "Established and managed artist partnerships and fan engagement features, enabling direct interaction, content discovery, and community-driven experiences."
             ]
         },
         {
@@ -22,12 +42,10 @@
             "period": "Dec 2021 – Dec 2022",
             "description": "Led end-to-end delivery of web and mobile products for enterprise clients, translating complex business needs into actionable roadmaps and backlogs.",
             "highlights": [
-                "Drove delivery of web and mobile products by converting business requirements into clear product roadmaps.",
-                "Partnered with stakeholders to define MVP scope, prioritize enhancements, and align on business outcomes.",
-                "Collaborated with UX and engineering to refine designs for usability and technical feasibility.",
-                "Managed multiple Agile teams, overseeing sprints, burndown metrics, and delivery timelines.",
-                "Introduced structured feedback loops that improved delivery quality and reduced post-launch issues.",
-                "Led product discovery and iterative development to deliver scalable, user-centered solutions."
+                "Delivered web and mobile products by translating business requirements into clear product roadmaps and execution plans.",
+                "Partnered with stakeholders to define MVP scope, prioritize features, and align delivery with business outcomes.",
+                "Collaborated closely with UX and engineering to ensure designs balanced usability, scalability, and technical feasibility.",
+                "Managed multiple Agile teams, overseeing sprint execution, delivery timelines, and release quality."
             ]
         },
         {
@@ -36,28 +54,24 @@
             "period": "May 2020 – Dec 2021",
             "description": "Managed large-scale software initiatives including analytics platforms, marketing automation tools, and client-facing applications.",
             "highlights": [
-                "Led multiple large-scale initiatives across internal analytics tools and marketing platforms.",
-                "Partnered with leadership to define product vision and roadmaps aligned with business objectives.",
-                "Collaborated with engineering and design to define user stories, acceptance criteria, and release plans.",
-                "Facilitated Agile ceremonies and prioritization workshops to improve sprint velocity and delivery transparency.",
-                "Used data and user insights to identify features that increased engagement and improved customer experience.",
-                "Strengthened collaboration between technical and non-technical teams to improve time-to-market."
+                "Led delivery of large-scale analytics and marketing platforms supporting internal teams and external clients.",
+                "Worked with leadership to define product vision, roadmaps, and prioritization aligned with business objectives.",
+                "Partnered with engineering and design to define user stories, acceptance criteria, and release plans.",
+                "Facilitated Agile ceremonies and prioritization workshops to improve sprint velocity and delivery transparency."
             ]
         },
-        {
-            "company": "Latcha & Associates",
-            "role": "Technical Project Manager",
-            "period": "Nov 2018 – Mar 2020",
-            "description": "Oversaw development of Audi’s CRM web application, managing the full product lifecycle from scope definition through launch.",
-            "highlights": [
-                "Managed the product lifecycle for Audi’s CRM web application from definition through launch.",
-                "Defined product requirements, features, and release plans with creative, data, and engineering teams.",
-                "Coordinated UX, data, and engineering efforts to optimize workflows and ensure scalability.",
-                "Facilitated sprint planning, retrospectives, and cross-functional collaboration.",
-                "Served as product liaison between internal teams and the client.",
-                "Ensured data accuracy, platform performance, and release quality through QA oversight."
-            ]
-        }
+    {
+        "company": "Consulting",
+        "role": "Product Consultant",
+        "period": "2020 – Present",
+        "description": "Advise entrepreneurs, startups, and growing businesses on product strategy, feature development, and operational execution to bring ideas from concept to market.",
+        "highlights": [
+            "Partner with founders to define product vision, validate market opportunities, and shape scalable roadmaps.",
+            "Guide feature prioritization and MVP scope using user research, competitive analysis, and business objectives.",
+            "Advise on technical architecture, development workflows, and operational processes to improve execution efficiency.",
+            "Support product launches, iteration cycles, and long-term growth strategies across web and mobile platforms."
+        ]
+    }
     ],
  "projects": [
     {

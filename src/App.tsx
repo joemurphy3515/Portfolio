@@ -128,7 +128,7 @@ const App = () => {
       <section className="section-container" id="work">
         <div className="section-header">
           <div className="vertical-bar" />
-          <h2 className="section-title">Work</h2>
+          <h2 className="section-title">Recent Work</h2>
         </div>
 
         <div className="work-layout">
@@ -163,96 +163,90 @@ const App = () => {
         </div>
       </section>
 
-      <section className="section-container what-i-do">
-        <div className="what-header">
-          <h2 className="big-outline-text">What I Do</h2>
-          <p className="section-subtext">
-            From Product to Engineering to Design to Operations
-          </p>
+      <section className="section-container capabilities" id="about">
+        <div className="section-header section-header--space-between">
+          <div className="section-header-left">
+            <div className="vertical-bar" />
+            <div>
+              <h2 className="section-title">What I Do</h2>
+              <p className="section-subtext">
+                Product leadership, full-stack engineering, and UI/UX design,
+                end to end.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="folders-stack">
-          <article className="folder-card folder-pm">
-            <div className="folder-tab">
-              <span className="folder-tab-text">Product Manager/Owner</span>
+        <div className="cap-grid">
+          <article className="cap-card">
+            <div className="cap-top">
+              <div className="cap-icon" aria-hidden="true">
+                ◆
+              </div>
+              <div>
+                <h3 className="cap-title">Product Manager / Owner</h3>
+                <p className="cap-summary">
+                  I bridge product strategy and delivery execution to move ideas
+                  from concept to customer impact.
+                </p>
+              </div>
             </div>
 
-            <div className="folder-body">
-              <p className="folder-body-text">
-                I operate at the intersection of product strategy and delivery
-                execution. While traditional Product Managers focus on vision
-                and market strategy, and Product Owners focus on backlog
-                execution and sprint delivery, I bridge both roles to ensure
-                ideas move seamlessly from concept to customer impact.
-              </p>
-
-              <p className="folder-body-text folder-body-text--small">
-                My experience spans defining product vision, aligning
-                stakeholders, and validating user needs, while also translating
-                strategy into clear requirements, prioritizing backlogs, and
-                working closely with engineering and design teams to deliver
-                high-quality solutions. This dual perspective allows me to
-                maintain strategic alignment while ensuring consistent,
-                efficient execution.
-              </p>
-            </div>
+            <ul className="cap-points">
+              <li>
+                Vision, roadmap, and prioritization grounded in insights +
+                metrics
+              </li>
+              <li>
+                Requirements, user stories, and sprint execution with
+                engineering
+              </li>
+              <li>Stakeholder alignment, workshops, and measurable outcomes</li>
+            </ul>
           </article>
 
-          <article className="folder-card folder-eng">
-            <div className="folder-tab">
-              <span className="folder-tab-text">
-                Hybrid Software Engineering
-              </span>
+          <article className="cap-card">
+            <div className="cap-top">
+              <div className="cap-icon" aria-hidden="true">
+                ⬣
+              </div>
+              <div>
+                <h3 className="cap-title">Hybrid Software Engineering</h3>
+                <p className="cap-summary">
+                  Hands-on across native iOS and full-stack web development,
+                  APIs, and production delivery.
+                </p>
+              </div>
             </div>
 
-            <div className="folder-body">
-              <p className="folder-body-text">
-                I bring hands-on software engineering experience across both
-                native mobile and full-stack web platforms. My technical
-                background includes building production iOS applications using
-                Swift and SwiftUI, alongside designing and developing scalable
-                web applications using React, TypeScript, Node.js, Python, and
-                cloud-based backend services like FIrebase.
-              </p>
-
-              <p className="folder-body-text folder-body-text--small">
-                I have experience designing application architecture,
-                integrating third-party APIs, building serverless backend
-                services, and developing full-stack backend systems using
-                Node.js with Express and Python with FastAPI. I’ve worked
-                extensively with real-time data platforms such as Firebase and
-                modern cloud infrastructure to support scalable, data-driven
-                applications. This cross-platform experience allows me to
-                understand system design end-to-end and collaborate effectively
-                across engineering, design, and product teams.
-              </p>
-            </div>
+            <ul className="cap-points">
+              <li>Swift / SwiftUI apps with scalable MVVM patterns</li>
+              <li>React + TypeScript, Node/Express, Python/FastAPI backends</li>
+              <li>
+                Firebase + cloud services for real-time, data-driven systems
+              </li>
+            </ul>
           </article>
 
-          <article className="folder-card folder-design">
-            <div className="folder-tab">
-              <span className="folder-tab-text">UI/UX Design</span>
+          <article className="cap-card">
+            <div className="cap-top">
+              <div className="cap-icon" aria-hidden="true">
+                ◼
+              </div>
+              <div>
+                <h3 className="cap-title">UI/UX Design</h3>
+                <p className="cap-summary">
+                  End-to-end product design across mobile and web, from concept
+                  to polished, usable interfaces.
+                </p>
+              </div>
             </div>
 
-            <div className="folder-body">
-              <p className="folder-body-text">
-                I design end-to-end digital experiences across web, mobile, and
-                platform-based products. My work includes user interface design,
-                user experience strategy, and brand development to ensure
-                consistent and engaging product experiences.
-              </p>
-
-              <p className="folder-body-text folder-body-text--small">
-                I’ve designed a wide range of applications including
-                consumer-facing products, internal enterprise tools, and
-                scalable platform ecosystems. I use tools such as Figma, Adobe
-                XD, Sketch, Photoshop, and Illustrator to create wireframes,
-                high-fidelity designs, interactive prototypes, and brand assets.
-                My design process blends user research, usability principles,
-                and product strategy to deliver intuitive, high-impact
-                experiences.
-              </p>
-            </div>
+            <ul className="cap-points">
+              <li>Wireframes → high-fidelity → interactive prototypes</li>
+              <li>Design systems, branding, and consistent visual language</li>
+              <li>Tools: Figma, Adobe XD, Sketch, Photoshop, Illustrator</li>
+            </ul>
           </article>
         </div>
       </section>

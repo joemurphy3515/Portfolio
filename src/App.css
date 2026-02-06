@@ -102,6 +102,7 @@
   --accent-teal: #14b8a6;
   --card-bg: #18181b;
   --border-color: #27272a;
+
   --font-display: "Panchang", sans-serif;
   --font-body: "Montserrat", sans-serif;
   --font-accent: "Author", serif;
@@ -133,6 +134,7 @@ body {
   overflow-x: hidden;
 }
 
+/* NAV */
 .navbar {
   display: flex;
   justify-content: center;
@@ -184,6 +186,7 @@ body {
   color: white;
 }
 
+/* HERO */
 .hero {
   display: flex;
   flex-direction: column;
@@ -192,7 +195,6 @@ body {
   text-align: center;
   overflow: hidden;
   margin: 200px 0 0 0;
-  padding: 0;
   padding-bottom: 5vh;
 }
 
@@ -242,6 +244,7 @@ body {
   font-size: 1.1rem;
 }
 
+/* SECTIONS */
 .section-container {
   margin: 100px 0;
 }
@@ -266,6 +269,7 @@ body {
   height: 28px;
   background-color: var(--accent-blue);
   margin-right: 15px;
+  flex: 0 0 auto;
 }
 
 .section-title {
@@ -274,6 +278,16 @@ body {
   font-weight: 600;
 }
 
+.section-subtext {
+  font-family: var(--font-accent);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+/* WORK */
 .work-layout {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -283,7 +297,6 @@ body {
 .work-sidebar {
   display: flex;
   flex-direction: column;
-  border-left: 1px solid var(--border-color);
 }
 
 .work-tab {
@@ -344,164 +357,98 @@ body {
   margin-bottom: 10px;
 }
 
-.big-outline-text {
-  font-family: var(--font-display);
-  font-size: 5rem;
-  color: var(--accent-blue);
+/* CAPABILITIES */
+.capabilities {
+  padding-top: 10px;
 }
 
-.section-subtext {
-  font-family: var(--font-accent);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--text-secondary);
-  margin: 0;
-  font-size: 1.7rem;
+/* IMPORTANT: align the bar to the title (not the center of title+subtext block) */
+.capabilities .section-header-left {
+  align-items: flex-start;
 }
 
-.what-header {
-  position: relative;
-  padding: 34px 34px 22px;
-  overflow: hidden;
+.capabilities .vertical-bar {
+  margin-top: 6px; /* tweak 4–10px */
+  height: 34px;
 }
 
-.folders-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 34px;
-  margin-top: 26px;
+.cap-grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
-.folder-card {
-  position: relative;
-  border-radius: 8px;
+.cap-card {
+  border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(
-    180deg,
-    rgba(28, 28, 32, 1) 0%,
-    rgba(16, 16, 18, 1) 100%
-  );
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-  overflow: visible;
+  background: rgba(18, 18, 20, 0.65);
+  backdrop-filter: blur(10px);
+  padding: 18px 18px 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
 }
 
-.folder-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 72px;
-  background: var(--folder-accent, rgba(139, 92, 246, 0.8));
-  opacity: 0.55;
+.cap-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(22, 22, 26, 0.72);
 }
 
-.folder-card::after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 340px;
-  height: 240px;
-  background: radial-gradient(
-    circle,
-    var(--folder-glow, rgba(139, 92, 246, 0.22)) 0%,
-    transparent 70%
-  );
-  pointer-events: none;
+.cap-top {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
 }
 
-.folder-tab {
-  position: absolute;
-  top: -18px;
-  left: 22px;
+.cap-icon {
+  width: 42px;
   height: 42px;
-  display: inline-flex;
-  align-items: center;
-  padding: 0 18px;
-  border-radius: 10px 10px 6px 6px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: linear-gradient(
-    180deg,
-    rgba(60, 60, 66, 0.85) 0%,
-    rgba(25, 25, 28, 0.92) 100%
-  );
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
-  z-index: 2;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.9);
+  flex: 0 0 auto;
 }
 
-.folder-tab::before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: -10px;
-  height: 12px;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  opacity: 0.9;
-  clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
-}
-
-.folder-tab-text {
+.cap-title {
+  margin: 0;
   font-family: var(--font-accent);
-  font-weight: 200;
-  font-size: 1.35rem;
+  font-weight: 500;
+  font-size: 1.05rem;
   letter-spacing: 0.2px;
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.92);
 }
 
-.folder-body {
-  position: relative;
-  z-index: 1;
-  padding: 54px 44px 36px;
-}
-
-.folder-body-text {
+.cap-summary {
+  margin: 6px 0 0;
   font-family: var(--font-accent);
   font-weight: 200;
   color: var(--text-secondary);
-  max-width: 900px;
-  margin-bottom: 18px;
+  line-height: 1.5;
+  opacity: 0.9;
 }
 
-.folder-body-text--small {
-  font-size: 0.95rem;
-  opacity: 0.82;
+.cap-points {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-accent);
+  font-weight: 200;
+  line-height: 1.6;
 }
 
-.folder-pm {
-  --folder-accent: linear-gradient(
-    180deg,
-    rgb(53, 19, 222) 0%,
-    rgba(72, 55, 158, 0) 100%
-  );
-  --folder-glow: rgba(92, 64, 226, 0.22);
+.cap-points li {
+  margin-bottom: 8px;
 }
 
-.folder-eng {
-  --folder-accent: linear-gradient(
-    180deg,
-    rgba(124, 58, 237, 1) 0%,
-    rgba(124, 58, 237, 0) 100%
-  );
-  --folder-glow: rgba(124, 58, 237, 0.22);
-}
-
-.folder-design {
-  --folder-accent: linear-gradient(
-    180deg,
-    rgba(20, 184, 166, 1) 0%,
-    rgba(20, 184, 166, 0) 100%
-  );
-  --folder-glow: rgba(20, 184, 166, 0.22);
-}
-
+/* GITHUB BTN */
 .github-btn {
   font-family: var(--font-body);
   font-weight: 600;
@@ -527,6 +474,7 @@ body {
   color: white;
 }
 
+/* PROJECTS */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -557,7 +505,7 @@ body {
 .project-title {
   font-family: var(--font-accent);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.4rem;
 }
 
 .project-logo-placeholder {
@@ -587,6 +535,7 @@ body {
   font-family: monospace;
 }
 
+/* FOOTER */
 .footer {
   text-align: center;
   padding: 100px 0;
@@ -626,6 +575,13 @@ body {
   border-color: white;
 }
 
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  .cap-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-title {
     font-size: 3rem;
@@ -646,6 +602,7 @@ body {
 
   .work-tab {
     font-family: var(--font-body);
+    font-weight: 500;
     white-space: nowrap;
     border-left: none;
     border-bottom: 2px solid transparent;
@@ -661,23 +618,11 @@ body {
     );
   }
 
-  .big-outline-text {
-    font-size: 3rem;
-  }
-
   .nav-pill {
     display: none;
   }
 
-  .folder-body {
-    padding: 52px 22px 28px;
-  }
-
-  .folder-tab {
-    left: 14px;
-  }
-
-  .folder-tab-text {
-    font-size: 1.15rem;
+  .section-subtext {
+    font-size: 1.25rem;
   }
 }
