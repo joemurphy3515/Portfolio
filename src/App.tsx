@@ -1,53 +1,82 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Github } from "lucide-react";
 import data from "./data.json";
 import "./App.css";
 
 const App = () => {
+  const navRef = useRef<HTMLElement | null>(null);
+
+  const [activeSection, setActiveSection] = useState<
+    "home" | "work" | "ventures" | "contact"
+  >("home");
   const [activeWorkIndex, setActiveWorkIndex] = useState(0);
+  const [copied, setCopied] = useState(false);
 
   const workHistory = data.workHistory;
   const projects = data.projects;
   const activeJob = workHistory[activeWorkIndex];
 
+  const sectionIds = useMemo(
+    () => ["home", "work", "ventures", "contact"] as const,
+    [],
+  );
+
+  const scrollToId = (id: (typeof sectionIds)[number]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const navH = navRef.current?.getBoundingClientRect().height ?? 0;
+    const y = window.scrollY + el.getBoundingClientRect().top - navH - 12;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   const handleAnchorClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    id: string,
+    id: (typeof sectionIds)[number],
   ) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    setActiveSection(id);
+    scrollToId(id);
   };
 
   useEffect(() => {
-    const sectionIds = ["home", "work", "ventures", "contact"];
+    const getActive = () => {
+      const navH = navRef.current?.getBoundingClientRect().height ?? 0;
+      const markerY = navH + 24;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+      let current: (typeof sectionIds)[number] = "home";
 
-          const id = entry.target.id;
-          document.querySelectorAll(".nav-pill-link").forEach((link) => {
-            const href = link.getAttribute("href");
-            link.classList.toggle("nav-pill-link--active", href === `#${id}`);
-          });
-        });
-      },
-      { threshold: 0.35 },
-    );
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+        const top = el.getBoundingClientRect().top;
+        if (top <= markerY) current = id;
+      }
 
-    return () => observer.disconnect();
-  }, []);
+      setActiveSection(current);
+    };
 
-  const [copied, setCopied] = useState(false);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        getActive();
+        ticking = false;
+      });
+    };
+
+    getActive();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", getActive);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", getActive);
+    };
+  }, [sectionIds]);
 
   const handleCopyEmail = async () => {
     try {
@@ -61,13 +90,15 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <nav className="navbar">
+      <nav className="navbar" ref={navRef}>
         <div className="logo">Joe Murphy</div>
 
         <div className="nav-pill">
           <a
             href="#home"
-            className="nav-pill-link nav-pill-link--active"
+            className={`nav-pill-link ${
+              activeSection === "home" ? "nav-pill-link--active" : ""
+            }`}
             onClick={(e) => handleAnchorClick(e, "home")}
           >
             Home
@@ -75,7 +106,9 @@ const App = () => {
 
           <a
             href="#work"
-            className="nav-pill-link"
+            className={`nav-pill-link ${
+              activeSection === "work" ? "nav-pill-link--active" : ""
+            }`}
             onClick={(e) => handleAnchorClick(e, "work")}
           >
             Work
@@ -83,7 +116,9 @@ const App = () => {
 
           <a
             href="#ventures"
-            className="nav-pill-link"
+            className={`nav-pill-link ${
+              activeSection === "ventures" ? "nav-pill-link--active" : ""
+            }`}
             onClick={(e) => handleAnchorClick(e, "ventures")}
           >
             Ventures
@@ -99,7 +134,9 @@ const App = () => {
 
           <a
             href="#contact"
-            className="nav-pill-link"
+            className={`nav-pill-link ${
+              activeSection === "contact" ? "nav-pill-link--active" : ""
+            }`}
             onClick={(e) => handleAnchorClick(e, "contact")}
           >
             Contact
@@ -116,9 +153,9 @@ const App = () => {
           Product
         </h1>
         <p className="hero-subtitle">
-          I don't just manage the roadmap; I design, code, and launch it. From
-          enterprise scale to startup speed, I welcome the mountains that slow
-          others down.
+          I don&apos;t just manage the roadmap; I design, code, and launch it.
+          From enterprise scale to startup speed, I welcome the mountains that
+          slow others down.
         </p>
       </header>
 
