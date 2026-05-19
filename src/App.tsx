@@ -1,38 +1,28 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
-  Github,
-  Compass,
-  Code2,
-  PenTool,
-  Music,
-  UtensilsCrossed,
-  DollarSign,
-  Heart,
-  Feather,
+  Linkedin,
+  Twitter,
+  Mail,
+  Instagram,
+  Copy,
+  Check,
+  User,
+  Briefcase,
+  Layers,
+  Sparkles,
 } from "lucide-react";
 import data from "./data.json";
 import "./App.css";
 
 const App = () => {
   const navRef = useRef<HTMLElement | null>(null);
-
-  const iconMap: Record<string, React.ReactNode> = {
-    music: <Music size={20} strokeWidth={1.8} />,
-    utensils: <UtensilsCrossed size={20} strokeWidth={1.8} />,
-    dollar: <DollarSign size={20} strokeWidth={1.8} />,
-    heart: <Heart size={20} strokeWidth={1.8} />,
-    feather: <Feather size={20} strokeWidth={1.8} />,
-  };
-
   const [activeSection, setActiveSection] = useState<
     "home" | "work" | "ventures" | "contact"
   >("home");
-  const [activeWorkIndex, setActiveWorkIndex] = useState(0);
   const [copied, setCopied] = useState(false);
 
-  const workHistory = data.workHistory;
-  const projects = data.projects;
-  const activeJob = workHistory[activeWorkIndex];
+  const workHistory = data.workHistory || [];
+  const projects = data.projects || [];
 
   const sectionIds = useMemo(
     () => ["home", "work", "ventures", "contact"] as const,
@@ -42,15 +32,13 @@ const App = () => {
   const scrollToId = (id: (typeof sectionIds)[number]) => {
     const el = document.getElementById(id);
     if (!el) return;
-
     const navH = navRef.current?.getBoundingClientRect().height ?? 0;
-    const y = window.scrollY + el.getBoundingClientRect().top - navH - 12;
-
+    const y = window.scrollY + el.getBoundingClientRect().top - navH - 24;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
   const handleAnchorClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
     id: (typeof sectionIds)[number],
   ) => {
     e.preventDefault();
@@ -61,18 +49,15 @@ const App = () => {
   useEffect(() => {
     const getActive = () => {
       const navH = navRef.current?.getBoundingClientRect().height ?? 0;
-      const markerY = navH + 24;
-
+      const markerY = navH + 100;
       let current: (typeof sectionIds)[number] = "home";
 
       for (const id of sectionIds) {
         const el = document.getElementById(id);
         if (!el) continue;
-
         const top = el.getBoundingClientRect().top;
         if (top <= markerY) current = id;
       }
-
       setActiveSection(current);
     };
 
@@ -89,7 +74,6 @@ const App = () => {
     getActive();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", getActive);
-
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", getActive);
@@ -107,258 +91,196 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
-      <nav className="navbar" ref={navRef}>
-        <div className="logo">Joe Murphy</div>
-
-        <div className="nav-pill">
-          <a
-            href="#home"
-            className={`nav-pill-link ${
-              activeSection === "home" ? "nav-pill-link--active" : ""
-            }`}
-            onClick={(e) => handleAnchorClick(e, "home")}
-          >
-            Home
-          </a>
-
-          <a
-            href="#work"
-            className={`nav-pill-link ${
-              activeSection === "work" ? "nav-pill-link--active" : ""
-            }`}
-            onClick={(e) => handleAnchorClick(e, "work")}
-          >
-            Work
-          </a>
-
-          <a
-            href="#ventures"
-            className={`nav-pill-link ${
-              activeSection === "ventures" ? "nav-pill-link--active" : ""
-            }`}
-            onClick={(e) => handleAnchorClick(e, "ventures")}
-          >
-            Ventures
-          </a>
-
-          <a
-            href="/Joe_Murphy_Resume.docx"
-            className="nav-pill-link"
-            download="Joe_Murphy_Resume.docx"
-          >
-            Resume
-          </a>
-
-          <a
-            href="#contact"
-            className={`nav-pill-link ${
-              activeSection === "contact" ? "nav-pill-link--active" : ""
-            }`}
-            onClick={(e) => handleAnchorClick(e, "contact")}
-          >
-            Contact
-          </a>
+    <div className="portfolio-dark-theme" id="home">
+      {/* Floating Top Navbar */}
+      <nav className="floating-navbar" ref={navRef}>
+        <div className="nav-profile-badge">
+          <div className="avatar-placeholder">JM</div>
         </div>
+        <div className="nav-internal-pills">
+          <button
+            onClick={(e) => handleAnchorClick(e, "home")}
+            className={`nav-icon-link ${activeSection === "home" ? "active" : ""}`}
+            title="Home"
+          >
+            <User size={18} />
+          </button>
+          <button
+            onClick={(e) => handleAnchorClick(e, "work")}
+            className={`nav-icon-link ${activeSection === "work" ? "active" : ""}`}
+            title="Experience"
+          >
+            <Briefcase size={18} />
+          </button>
+          <button
+            onClick={(e) => handleAnchorClick(e, "ventures")}
+            className={`nav-icon-link ${activeSection === "ventures" ? "active" : ""}`}
+            title="Ventures"
+          >
+            <Layers size={18} />
+          </button>
+        </div>
+        <button className="say-hello-cta" onClick={() => scrollToId("contact")}>
+          Say Hello! 👋
+        </button>
       </nav>
 
-      <header className="hero" id="home">
-        <h1 className="hero-title">
-          The
-          <br />
-          Full-Stack
-          <br />
-          Product
-        </h1>
-        <p className="hero-subtitle">
-          For more than a decade, I’ve been building across product, design, and
-          engineering, not just understanding how software works, but how it’s
-          imagined, built, and brought to life. I’m driven by curiosity,
-          obsessed with improvement, and always looking for the next meaningful
-          challenge.
-        </p>
+      {/* Main Hero Layout Grid */}
+      <header className="hero-grid-section">
+        <div className="hero-left-intro">
+          <span className="availability-tag">
+            <span className="pulse-indicator"></span> Available for Freelancing
+            & Consulting • Michigan, USA
+          </span>
+          <h1 className="main-headline">
+            I'm Joe, a <strong>product manager</strong> crafting
+            multi-disciplinary software with tactical precision.
+          </h1>
+        </div>
+
+        {/* Dynamic Interactive Avatar Node Graphic */}
+        <div className="interactive-node-display">
+          <div className="node-center-frame">
+            <div className="node-avatar">JM</div>
+            <div className="node-label-tag">Joe Murphy</div>
+          </div>
+          <div className="floating-node node-pm">Product Strategy</div>
+          <div className="floating-node node-eng">Full-Stack Dev</div>
+          <div className="floating-node node-uiux">UI/UX Design</div>
+          <div className="floating-node node-audio">Music Producer</div>
+        </div>
       </header>
 
-      <div className="blue-circle" />
-      <div className="green-circle" />
-
-      <section className="section-container" id="work">
-        <div className="section-header">
-          <div className="vertical-bar" />
-          <h2 className="section-title">Recent Work</h2>
-        </div>
-
-        <div className="work-layout">
-          <div className="work-sidebar">
-            {workHistory.map((job: any, index: number) => (
-              <button
-                key={index}
-                className={`work-tab ${
-                  activeWorkIndex === index ? "work-tab--active" : ""
-                }`}
-                onClick={() => setActiveWorkIndex(index)}
-                type="button"
-              >
-                {job.company}
-              </button>
-            ))}
+      {/* Grid Dashboard Widgets */}
+      <main className="dashboard-bento-grid">
+        {/* Experience Widget */}
+        <section className="bento-card card-experience" id="work">
+          <div className="card-header-row">
+            <h2 className="card-title">Experience</h2>
+            <span className="card-subtitle-metric">12+ Years</span>
           </div>
-
-          <div className="work-content">
-            <h3 className="work-role">{activeJob.role}</h3>
-            <span className="work-date">{activeJob.period}</span>
-            <p className="work-desc">{activeJob.description}</p>
-
-            <ul className="work-list">
-              {activeJob.highlights.map((point: string, i: number) => (
-                <li className="work-list-item" key={i}>
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-container capabilities" id="about">
-        <div className="section-header section-header--space-between">
-          <div className="section-header-left">
-            <div className="vertical-bar" />
-            <div>
-              <h2 className="section-title">What I Do</h2>
-              <p className="section-subtext">
-                Product leadership, full-stack engineering, and UI/UX design,
-                end to end.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="cap-grid">
-          <article className="cap-card">
-            <div className="cap-top">
-              <div className="cap-icon" aria-hidden="true">
-                <Compass size={18} strokeWidth={1.8} />
-              </div>
-              <div>
-                <h3 className="cap-title">Product Manager / Owner</h3>
-                <p className="cap-summary">
-                  I bridge product strategy and delivery execution to move ideas
-                  from concept to customer impact.
-                </p>
-              </div>
-            </div>
-            <ul className="cap-points">
-              <li>
-                Vision, roadmap, and prioritization grounded in insights +
-                metrics
-              </li>
-              <li>
-                Requirements, user stories, and sprint execution with
-                engineering
-              </li>
-              <li>Stakeholder alignment, workshops, and measurable outcomes</li>
-            </ul>
-          </article>
-
-          <article className="cap-card">
-            <div className="cap-top">
-              <div className="cap-icon" aria-hidden="true">
-                <Code2 size={18} strokeWidth={1.8} />
-              </div>
-              <div>
-                <h3 className="cap-title">Hybrid Software Engineering</h3>
-                <p className="cap-summary">
-                  Hands-on across native iOS and full-stack web development,
-                  APIs, and production delivery.
-                </p>
-              </div>
-            </div>
-
-            <ul className="cap-points">
-              <li>Swift / SwiftUI apps with scalable MVVM patterns</li>
-              <li>React + TypeScript, Node/Express, Python/FastAPI backends</li>
-              <li>
-                Firebase + cloud services for real-time, data-driven systems
-              </li>
-            </ul>
-          </article>
-          <article className="cap-card">
-            <div className="cap-top">
-              <div className="cap-icon" aria-hidden="true">
-                <PenTool size={18} strokeWidth={1.8} />
-              </div>
-
-              <div>
-                <h3 className="cap-title">UI/UX Design</h3>
-                <p className="cap-summary">
-                  End-to-end product design across mobile and web, from concept
-                  to polished, usable interfaces.
-                </p>
-              </div>
-            </div>
-
-            <ul className="cap-points">
-              <li>Wireframes → high-fidelity → interactive prototypes</li>
-              <li>Design systems, branding, and consistent visual language</li>
-              <li>Tools: Figma, Adobe XD, Sketch, Photoshop, Illustrator</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section className="section-container" id="ventures">
-        <div className="section-header section-header--space-between">
-          <div className="section-header-left">
-            <div className="vertical-bar" />
-            <h2 className="section-title">Venture Projects</h2>
-          </div>
-
-          <a
-            href="https://github.com/joemurphy3515"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="github-btn"
-          >
-            <Github size={18} />
-            Github
-          </a>
-        </div>
-
-        <div className="projects-grid">
-          {projects.map((project: any, index: number) => (
-            <div className="project-card" key={index}>
-              <div className="project-header">
-                <h4 className="project-title">{project.name}</h4>
-                <div className="project-logo-placeholder">
-                  {iconMap[project.icon]}
+          <div className="timeline-list">
+            {workHistory.map((job: any, idx: number) => (
+              <div className="timeline-item" key={idx}>
+                <div className="timeline-dot-connector"></div>
+                <div className="timeline-meta">
+                  <div className="company-title">{job.company}</div>
+                  <div className="role-tenure-row">
+                    <span className="role-text">{job.role}</span>
+                    <span className="date-text">{job.period}</span>
+                  </div>
+                  <p className="timeline-brief">{job.description}</p>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
 
-              <p className="project-desc">{project.description}</p>
-
-              <div className="project-tags">
-                {project.tags.map((tag: string) => (
-                  <span className="project-tag" key={tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
+        {/* Dynamic Stack & Skills Container */}
+        <div className="bento-sub-column">
+          {/* Skills & Expertise */}
+          <section className="bento-card card-skills">
+            <h2 className="card-title">Skills & Expertise</h2>
+            <div className="tags-flex-wrap">
+              <span className="skill-tag">Product Management</span>
+              <span className="skill-tag">System Architecture</span>
+              <span className="skill-tag">UI/UX Design</span>
+              <span className="skill-tag">SwiftUI / iOS</span>
+              <span className="skill-tag">React & TypeScript</span>
+              <span className="skill-tag">Python / FastAPI</span>
+              <span className="skill-tag">Audio Production</span>
             </div>
-          ))}
+          </section>
+
+          {/* Essential Stacks */}
+          <section className="bento-card card-stacks" id="ventures">
+            <h2 className="card-title">Venture Projects & Ecosystems</h2>
+            <p className="stacks-description">
+              Building automated platforms, tracking apps, and discovery
+              interfaces.
+            </p>
+            <div className="projects-mini-list">
+              {projects.map((project: any, idx: number) => (
+                <div className="mini-project-row" key={idx}>
+                  <div className="project-bullet-icon">
+                    <Sparkles size={14} className="accent-color" />
+                  </div>
+                  <div className="mini-project-details">
+                    <div className="mini-project-name">{project.name}</div>
+                    <div className="mini-project-tags">
+                      {project.tags?.join(" • ")}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
-      </section>
 
-      <footer className="footer" id="contact">
-        <h2 className="footer-title">Connect With Me</h2>
-        <p className="footer-subtitle">
-          Open to consulting, full-time positions, advisory roles, and coffee.
-        </p>
+        {/* Connect & Communication Widget */}
+        <section className="bento-card card-connect" id="contact">
+          <h2 className="card-title">Connect</h2>
+          <div className="social-links-stack">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noreferrer"
+              className="social-row-item"
+            >
+              <Linkedin size={18} /> <span>LinkedIn</span>
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noreferrer"
+              className="social-row-item"
+            >
+              <Twitter size={18} /> <span>X (Previously Twitter)</span>
+            </a>
+            <a
+              href="https://telegram.org"
+              target="_blank"
+              rel="noreferrer"
+              className="social-row-item"
+            >
+              <Mail size={18} /> <span>Telegram</span>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="social-row-item"
+            >
+              <Instagram size={18} /> <span>Instagram</span>
+            </a>
+          </div>
 
-        <button className="cta-btn" type="button" onClick={handleCopyEmail}>
-          {copied ? "Email Copied!" : "Get In Touch"}
-        </button>
-      </footer>
+          <div className="email-action-footer-box">
+            <div className="action-text-group">
+              <span className="action-label">Let's Work Together!</span>
+              <span className="action-subtext">
+                Click below to copy email address
+              </span>
+            </div>
+            <button
+              className="email-copy-trigger-pill"
+              onClick={handleCopyEmail}
+            >
+              {copied ? (
+                <>
+                  <Check size={16} className="text-success" />
+                  <span>Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Copy size={16} />
+                  <span>jmurphy2591@gmail.com</span>
+                </>
+              )}
+            </button>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };
