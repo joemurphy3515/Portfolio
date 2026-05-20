@@ -87,7 +87,7 @@
     "projects": [
         {
             "name": "Augio",
-            "description": "A native iOS music streaming, discovery, and curation platform focused on helping independent artists reach new listeners through regional charts and editorial discovery.",
+            "description": "A music streaming, discovery, and curation platform focused on helping independent artists reach new listeners through location-based music discovery.",
             "tags": [
                 "iOS",
                 "Swift",
@@ -102,7 +102,7 @@
         },
         {
             "name": "Taygo",
-            "description": "A social foodie platform for discovering, rating, and recommending restaurants, with features for sharing experiences and exploring new places with friends.",
+            "description": "A social food platform for discovering, rating, and recommending restaurants, with features for sharing experiences and exploring new places with friends.",
             "tags": [
                 "iOS",
                 "Swift",
@@ -116,14 +116,14 @@
         },
         {
             "name": "Prism Finance",
-            "description": "A web-based financial analysis and tracking platform built to aggregate, analyze, and visualize personal investment and market data.",
+            "description": "Prism Finance is a proprietary platform for stock analysis, trend discovery, buy/sell signal detection, portfolio management, stock screening, and advanced market queries.",
             "tags": [
                 "React",
+                "Typescript",
                 "Python",
                 "FastAPI",
                 "Firebase",
-                "Postgres",
-                "Subscriptions",
+                "PostgreSQL",
                 "Sevalla"
             ],
             "icon": "dollar"
@@ -136,20 +136,17 @@
                 "Swift",
                 "SwiftUI",
                 "SwiftData",
-                "MVVM"
+                "MVVM",
+                "Swift Data"
             ],
             "icon": "heart"
         },
         {
             "name": "Stash",
-            "description": "A white-label native mobile platform for authors to host audiobooks, manage subscriptions, sell digital content, and engage directly with their audience.",
+            "description": "A budgeting application that uses AI-powered transaction categorization and spending analysis to help users track expenses, maintain budgets, and receive smart alerts.",
             "tags": [
-                "iOS",
-                "Swift",
-                "SwiftUI",
                 "React",
                 "Typescript",
-                "MVVM",
                 "Node.js",
                 "Firebase",
                 "Google Cloud"
