@@ -13,27 +13,27 @@
             ]
         },
         {
-            "company": "Fuse Ventures",
-            "role": "Product Manager & Software Engineer",
-            "period": "Venture Studio - Present",
-            "description": "Partnered with early-stage ventures to shape product strategy, design, and engineering for consumer-ready web and mobile products.",
-            "highlights": [
-                "Helped define and guide product strategy through discovery, research, and customer outreach to validate concepts and identify market-fit opportunities.",
-                "Architected and implemented software solutions across web and mobile platforms, supporting products from initial development through redesigns and launches.",
-                "Led UX/UI design efforts, translating user research and product requirements into intuitive, scalable interfaces.",
-                "Collaborated closely with founders and stakeholders to iterate on features, refine positioning, and deliver consumer-ready products."
-            ]
-        },
-        {
             "company": "Augio",
-            "role": "Founder / Product & iOS Engineer",
-            "period": "Startup Venture - Present",
+            "role": "Product & Engineering Lead",
+            "period": "Apr 2022 - Present",
             "description": "Built and launched a music discovery and streaming platform from concept through delivery, owning product strategy, design, engineering, and go-to-market execution.",
             "highlights": [
                 "Designed and developed a native iOS application using Swift, SwiftUI, and MVVM, supported by a scalable backend built with Node.js, Express, Firebase, and Google Cloud services.",
                 "Led end-to-end product development across mobile and web platforms, including web-based tools and marketing experiences to support artist onboarding and platform growth.",
                 "Owned the full product lifecycle from ideation and UX/UI design through development, deployment, and iteration.",
                 "Established and managed artist partnerships and fan engagement features, enabling direct interaction, content discovery, and community-driven experiences."
+            ]
+        },
+        {
+            "company": "Taygo",
+            "role": "Product & Engineering Lead",
+            "period": "Jan 2024 - Mar 2026",
+            "description": "Led product strategy, UX, and full-stack engineering for a social food discovery platform focused on restaurant recommendations, nightlife discovery, and community-driven experiences.",
+            "highlights": [
+                "Built Taygo, a native social food discovery app using Swift, SwiftUI, MVVM, Node.js, Firebase, and Google Cloud.",
+                "Led end-to-end product development across mobile and web platforms for restaurant discovery and social engagement features.",
+                "Created community-driven experiences for sharing recommendations, tracking favorite spots, and discovering new restaurants and nightlife.",
+                "Owned the full product lifecycle from ideation and UX/UI design through development, launch, and iteration."
             ]
         },
         {
@@ -54,95 +54,122 @@
             "period": "May 2020 – Dec 2021",
             "description": "Managed large-scale software initiatives including analytics platforms, marketing automation tools, and client-facing applications.",
             "highlights": [
-                "Led delivery of large-scale analytics and marketing platforms supporting internal teams and external clients.",
+                "Led the launch of large-scale analytics and marketing platforms supporting internal teams and external clients.",
                 "Worked with leadership to define product vision, roadmaps, and prioritization aligned with business objectives.",
                 "Partnered with engineering and design to define user stories, acceptance criteria, and release plans.",
                 "Facilitated Agile ceremonies and prioritization workshops to improve sprint velocity and delivery transparency."
             ]
         },
-    {
-        "company": "Consulting",
-        "role": "Product Consultant",
-        "period": "2020 – Present",
-        "description": "Advise entrepreneurs, startups, and growing businesses on product strategy, feature development, and operational execution to bring ideas from concept to market.",
-        "highlights": [
-            "Partner with founders to define product vision, validate market opportunities, and shape scalable roadmaps.",
-            "Guide feature prioritization and MVP scope using user research, competitive analysis, and business objectives.",
-            "Advise on technical architecture, development workflows, and operational processes to improve execution efficiency.",
-            "Support product launches, iteration cycles, and long-term growth strategies across web and mobile platforms."
-        ]
-    }
+        {
+            "company": "Consulting",
+            "role": "Product Consultant",
+            "period": "2020 – Present",
+            "description": "Advise entrepreneurs, startups, and growing businesses on product strategy, feature development, and operational execution to bring ideas from concept to market.",
+            "highlights": [
+                "Partner with founders to define product vision, validate market opportunities, and shape scalable roadmaps.",
+                "Guide feature prioritization and MVP scope using user research, competitive analysis, and business objectives.",
+                "Advise on technical architecture, development workflows, and operational processes to improve execution efficiency.",
+                "Support product launches, iteration cycles, and long-term growth strategies across web and mobile platforms."
+            ]
+        },
+        {
+            "company": "Latcha & Associates",
+            "role": "Technical Project Manager",
+            "period": "Nov 2018 - Mar 2020",
+            "description": "Managed cross-functional product delivery and technical execution for enterprise web applications, partnering with engineering, UX, data, and business stakeholders to deliver scalable digital solutions.",
+            "highlights": [
+                "Led development coordination for Audi’s CRM web application, managing requirements, sprint planning, QA oversight, and release execution across cross-functional teams.",
+                "Collaborated with engineering, UX, and business stakeholders to define product features, optimize workflows, and align technical delivery with client and business objectives.",
+                "Facilitated Agile ceremonies, project tracking, and stakeholder communication to ensure timely delivery and platform performance."
+            ]
+        }
     ],
- "projects": [
-    {
-        "name": "Augio",
-        "description": "A native iOS music streaming, discovery, and curation platform focused on helping independent artists reach new listeners through regional charts and editorial discovery.",
-        "tags": [
-            "iOS",
-            "Swift",
-            "SwiftUI",
-            "MVVM",
-            "Node.js",
-            "Express",
-            "Firebase",
-            "Google Cloud"
-        ],
-        "icon": "music"
-    },
-    {
-        "name": "Taygo",
-        "description": "A social foodie platform for discovering, rating, and recommending restaurants, with features for sharing experiences and exploring new places with friends.",
-        "tags": [
-            "iOS",
-            "Swift",
-            "SwiftUI",
-            "MVVM",
-            "Firebase",
-            "Node.js",
-            "Google Cloud"
-        ],
-        "icon": "utensils"
-    },
-    {
-        "name": "Prism Finance",
-        "description": "A web-based financial analysis and tracking platform built to aggregate, analyze, and visualize personal investment and market data.",
-        "tags": [
-            "React",
-            "Python",
-            "FastAPI",
-            "Firebase",
-            "Postgres",
-            "Subscriptions",
-            "Sevalla"
-        ],
-        "icon": "dollar"
-    },
-    {
-        "name": "CardioLog",
-        "description": "A native mobile cardiovascular health log designed to help individuals track, monitor, and manage key heart health metrics over time.",
-        "tags": [
-            "iOS",
-            "Swift",
-            "SwiftUI",
-            "SwiftData",
-            "MVVM"
-        ],
-        "icon": "heart"
-    },
-    {
-        "name": "Quil",
-        "description": "A white-label native mobile platform for authors to host audiobooks, manage subscriptions, sell digital content, and engage directly with their audience.",
-        "tags": [
-            "iOS",
-            "Swift",
-            "SwiftUI",
-            "MVVM",
-            "Node.js",
-            "Firebase",
-            "Google Cloud",
-            "E-commerce"
-        ],
-        "icon": "feather"
-    }
-]
+    "projects": [
+        {
+            "name": "Augio",
+            "description": "A native iOS music streaming, discovery, and curation platform focused on helping independent artists reach new listeners through regional charts and editorial discovery.",
+            "tags": [
+                "iOS",
+                "Swift",
+                "SwiftUI",
+                "MVVM",
+                "Node.js",
+                "Express",
+                "Firebase",
+                "Google Cloud"
+            ],
+            "icon": "music"
+        },
+        {
+            "name": "Taygo",
+            "description": "A social foodie platform for discovering, rating, and recommending restaurants, with features for sharing experiences and exploring new places with friends.",
+            "tags": [
+                "iOS",
+                "Swift",
+                "SwiftUI",
+                "MVVM",
+                "Firebase",
+                "Node.js",
+                "Google Cloud"
+            ],
+            "icon": "utensils"
+        },
+        {
+            "name": "Prism Finance",
+            "description": "A web-based financial analysis and tracking platform built to aggregate, analyze, and visualize personal investment and market data.",
+            "tags": [
+                "React",
+                "Python",
+                "FastAPI",
+                "Firebase",
+                "Postgres",
+                "Subscriptions",
+                "Sevalla"
+            ],
+            "icon": "dollar"
+        },
+        {
+            "name": "CardioLog",
+            "description": "A native mobile cardiovascular health log designed to help individuals track, monitor, and manage key heart health metrics over time.",
+            "tags": [
+                "iOS",
+                "Swift",
+                "SwiftUI",
+                "SwiftData",
+                "MVVM"
+            ],
+            "icon": "heart"
+        },
+        {
+            "name": "Stash",
+            "description": "A white-label native mobile platform for authors to host audiobooks, manage subscriptions, sell digital content, and engage directly with their audience.",
+            "tags": [
+                "iOS",
+                "Swift",
+                "SwiftUI",
+                "React",
+                "Typescript",
+                "MVVM",
+                "Node.js",
+                "Firebase",
+                "Google Cloud"
+            ],
+            "icon": "feather"
+        },
+        {
+            "name": "Quil",
+            "description": "A white-label native mobile platform for authors to host audiobooks, manage subscriptions, sell digital content, and engage directly with their audience.",
+            "tags": [
+                "iOS",
+                "Swift",
+                "SwiftUI",
+                "MVVM",
+                "Node.js",
+                "Firebase",
+                "Google Cloud",
+                "E-commerce"
+            ],
+            "icon": "feather"
+        }
+    ]
 }

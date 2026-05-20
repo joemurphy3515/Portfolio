@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   Linkedin,
-  Twitter,
+  Github,
   Mail,
   Instagram,
   Copy,
@@ -116,19 +116,19 @@ const App = () => {
           </button>
         </div>
         <button className="say-hello-cta" onClick={() => scrollToId("contact")}>
-          Say Hello! 👋
+          Welcome! 👋
         </button>
       </nav>
 
       <header className="hero-grid-section">
         <div className="hero-left-intro">
           <span className="availability-tag">
-            <span className="pulse-indicator"></span> Available for Freelancing
-            & Consulting • Michigan, USA
+            <span className="pulse-indicator"></span>Open to consulting,
+            full-time positions, advisory roles, and coffee • Michigan, USA
           </span>
           <h1 className="main-headline">
-            I'm Joe, a <strong>product manager</strong> crafting
-            multi-disciplinary software with tactical precision.
+            I’m Joe, a <strong>product engineer</strong> blending product,
+            design, and engineering experience to build thoughtful software experiences.
           </h1>
         </div>
 
@@ -208,28 +208,20 @@ const App = () => {
           <h2 className="card-title">Connect</h2>
           <div className="social-links-stack">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/joemurphy2591/"
               target="_blank"
               rel="noreferrer"
               className="social-row-item"
             >
-              <Linkedin size={16} /> <span>LinkedIn</span>
+              <Linkedin size={16} /> <span>Linkedin</span>
             </a>
             <a
-              href="https://twitter.com"
+              href="https://github.com/joemurphy3515"
               target="_blank"
               rel="noreferrer"
               className="social-row-item"
             >
-              <Twitter size={16} /> <span>Twitter</span>
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-              className="social-row-item"
-            >
-              <Instagram size={16} /> <span>Instagram</span>
+              <Github size={16} /> <span>Github</span>
             </a>
           </div>
 
@@ -258,7 +250,7 @@ const App = () => {
         <div className="spotlight-header">
           <div className="spotlight-title-group">
             <span className="spotlight-pre">Deep Dive</span>
-            <h2 className="spotlight-main-title">Venture Projects</h2>
+            <h2 className="spotlight-main-title">Project Highlights</h2>
           </div>
           <div className="spotlight-horizontal-divider"></div>
         </div>
