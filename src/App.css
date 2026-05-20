@@ -139,7 +139,7 @@ body {
 }
 
 .main-headline {
-  font-size: 42px;
+  font-size: 35px;
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -1px;
@@ -209,22 +209,18 @@ body {
   top: 6%;
   left: 4%;
 }
-
 .node-eng {
   top: 10%;
   right: 2%;
 }
-
 .node-founder {
   top: 46%;
   right: -4%;
 }
-
 .node-uiux {
   bottom: 14%;
   left: -2%;
 }
-
 .node-audio {
   bottom: 8%;
   right: 8%;
@@ -232,7 +228,8 @@ body {
 
 .dashboard-bento-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.95fr 0.9fr;
+  grid-template-columns: 1.15fr 1fr 0.85fr;
+  grid-template-rows: auto auto;
   gap: 16px;
   margin-bottom: 80px;
   align-items: stretch;
@@ -249,22 +246,27 @@ body {
 }
 
 .card-experience {
-  height: 100%;
-  min-height: 440px;
-}
-
-.bento-sub-column {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  justify-content: space-between;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  height: 600px;
 }
 
 .card-skills {
-  flex: 1.1;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
+
+.card-connect {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .card-stacks {
-  flex: 0.9;
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
 }
 
 .card-title {
@@ -292,9 +294,10 @@ body {
 }
 
 .timeline-scroll-container {
-  max-height: 350px;
+  flex: 1;
   overflow-y: auto;
   padding-right: 6px;
+  min-height: 0;
 }
 
 .timeline-scroll-container::-webkit-scrollbar {
@@ -382,7 +385,7 @@ body {
 }
 .stacks-mini-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   gap: 8px;
 }
 .stack-mini-pill {
@@ -396,9 +399,6 @@ body {
   color: var(--text-primary);
 }
 
-.card-connect {
-  align-self: start;
-}
 .social-links-stack {
   display: flex;
   flex-direction: column;
@@ -418,7 +418,7 @@ body {
   color: var(--text-primary);
 }
 .email-action-footer-box {
-  margin-top: 16px;
+  margin-top: auto;
 }
 .email-copy-trigger-pill {
   width: 100%;
@@ -738,14 +738,30 @@ body {
 @media (max-width: 1024px) {
   .dashboard-bento-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .card-experience,
+  .card-skills,
+  .card-connect,
+  .card-stacks {
+    grid-column: 1 / -1;
+    grid-row: auto;
   }
   .card-experience {
-    min-height: auto;
+    height: 500px;
+  }
+  .stacks-mini-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
   .spotlight-workspace-grid {
     grid-template-columns: 1fr;
   }
   .hero-grid-section {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .stacks-mini-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

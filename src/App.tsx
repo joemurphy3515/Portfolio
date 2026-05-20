@@ -2,8 +2,6 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   Linkedin,
   Github,
-  Mail,
-  Instagram,
   Copy,
   Check,
   User,
@@ -190,45 +188,22 @@ const App = () => {
           </div>
         </section>
 
-        <div className="bento-sub-column">
-          <section className="bento-card card-skills">
-            <h2 className="card-title">Skills & Expertise</h2>
-            <div className="tags-flex-wrap">
-              <span className="skill-tag">Product Management</span>
-              <span className="skill-tag">Product Strategy</span>
-              <span className="skill-tag">Road Mapping</span>
-              <span className="skill-tag">Market Analysis </span>
-              <span className="skill-tag">UI/UX Design</span>
-              <span className="skill-tag">Full-Stack Engineering</span>
-              <span className="skill-tag">API Integrations</span>
-              <span className="skill-tag">Agile / Scrum</span>
-              <span className="skill-tag">Technical Leadership</span>
-              <span className="skill-tag">Product Launch & Iteration</span>
-            </div>
-          </section>
+        <section className="bento-card card-skills">
+          <h2 className="card-title">Skills & Expertise</h2>
 
-          <section className="bento-card card-stacks">
-            <h2 className="card-title">Technical Proficiency</h2>
-            <p className="stacks-description">
-              Core technologies and frameworks used across production platforms.
-            </p>
-            <div className="stacks-mini-grid">
-              <div className="stack-mini-pill">Swift</div>
-              <div className="stack-mini-pill">SwiftUI</div>
-              <div className="stack-mini-pill">React</div>
-              <div className="stack-mini-pill">TypeScript</div>
-              <div className="stack-mini-pill">Node.js</div>
-              <div className="stack-mini-pill">Express</div>
-              <div className="stack-mini-pill">Python</div>
-              <div className="stack-mini-pill">FastAPI</div>
-              <div className="stack-mini-pill">Firebase</div>
-              <div className="stack-mini-pill">PostgreSQL</div>
-              <div className="stack-mini-pill">Google Cloud</div>
-              <div className="stack-mini-pill">Figma</div>
-              <div className="stack-mini-pill">JIRA</div>
-            </div>
-          </section>
-        </div>
+          <div className="tags-flex-wrap">
+            <span className="skill-tag">Product Management</span>
+            <span className="skill-tag">Product Strategy</span>
+            <span className="skill-tag">Road Mapping</span>
+            <span className="skill-tag">Market Analysis </span>
+            <span className="skill-tag">UI/UX Design</span>
+            <span className="skill-tag">Full-Stack Engineering</span>
+            <span className="skill-tag">API Integrations</span>
+            <span className="skill-tag">Agile / Scrum</span>
+            <span className="skill-tag">Technical Leadership</span>
+            <span className="skill-tag">Product Launch & Iteration</span>
+          </div>
+        </section>
 
         <section className="bento-card card-connect" id="contact">
           <h2 className="card-title">Connect</h2>
@@ -268,6 +243,29 @@ const App = () => {
                 </>
               )}
             </button>
+          </div>
+        </section>
+
+        <section className="bento-card card-stacks">
+          <h2 className="card-title">Technical Proficiency</h2>
+          <p className="stacks-description">
+            Technologies and frameworks I've used across projects.
+          </p>
+
+          <div className="stacks-mini-grid">
+            <div className="stack-mini-pill">Swift</div>
+            <div className="stack-mini-pill">SwiftUI</div>
+            <div className="stack-mini-pill">React</div>
+            <div className="stack-mini-pill">TypeScript</div>
+            <div className="stack-mini-pill">Node.js</div>
+            <div className="stack-mini-pill">Express</div>
+            <div className="stack-mini-pill">Python</div>
+            <div className="stack-mini-pill">FastAPI</div>
+            <div className="stack-mini-pill">Firebase</div>
+            <div className="stack-mini-pill">PostgreSQL</div>
+            <div className="stack-mini-pill">Google Cloud</div>
+            <div className="stack-mini-pill">Figma</div>
+            <div className="stack-mini-pill">JIRA</div>
           </div>
         </section>
       </main>
