@@ -84,89 +84,95 @@
             ]
         }
     ],
-    "projects": [
-        {
-            "name": "Augio",
-            "description": "A music streaming, discovery, and curation platform focused on helping independent artists reach new listeners through location-based music discovery.",
-            "tags": [
-                "iOS",
-                "Swift",
-                "SwiftUI",
-                "MVVM",
-                "Node.js",
-                "Express",
-                "Firebase",
-                "Google Cloud"
-            ],
-            "icon": "music"
-        },
-        {
-            "name": "Taygo",
-            "description": "A social food platform for discovering, rating, and recommending restaurants, with features for sharing experiences and exploring new places with friends.",
-            "tags": [
-                "iOS",
-                "Swift",
-                "SwiftUI",
-                "MVVM",
-                "Firebase",
-                "Node.js",
-                "Google Cloud"
-            ],
-            "icon": "utensils"
-        },
-        {
-            "name": "Prism Finance",
-            "description": "Prism Finance is a proprietary platform for stock analysis, trend discovery, buy/sell signal detection, portfolio management, stock screening, and advanced market queries.",
-            "tags": [
-                "React",
-                "Typescript",
-                "Python",
-                "FastAPI",
-                "Firebase",
-                "PostgreSQL",
-                "Sevalla"
-            ],
-            "icon": "dollar"
-        },
-        {
-            "name": "CardioLog",
-            "description": "A native mobile cardiovascular health log designed to help individuals track, monitor, and manage key heart health metrics over time.",
-            "tags": [
-                "iOS",
-                "Swift",
-                "SwiftUI",
-                "SwiftData",
-                "MVVM",
-                "Swift Data"
-            ],
-            "icon": "heart"
-        },
-        {
-            "name": "Stash",
-            "description": "A budgeting application that uses AI-powered transaction categorization and spending analysis to help users track expenses, maintain budgets, and receive smart alerts.",
-            "tags": [
-                "React",
-                "Typescript",
-                "Node.js",
-                "Firebase",
-                "Google Cloud"
-            ],
-            "icon": "feather"
-        },
-        {
-            "name": "Quil",
-            "description": "A white-label native mobile platform for authors to host audiobooks, manage subscriptions, sell digital content, and engage directly with their audience.",
-            "tags": [
-                "iOS",
-                "Swift",
-                "SwiftUI",
-                "MVVM",
-                "Node.js",
-                "Firebase",
-                "Google Cloud",
-                "E-commerce"
-            ],
-            "icon": "feather"
-        }
-    ]
+ "projects": [
+    {
+        "name": "Augio",
+        "description": "A music streaming, discovery, and curation platform focused on helping independent artists reach new listeners through location-based music discovery.",
+        "url": "https://augio.io",
+        "tags": [
+            "iOS",
+            "Swift",
+            "SwiftUI",
+            "MVVM",
+            "Node.js",
+            "Express",
+            "Firebase",
+            "Google Cloud"
+        ],
+        "icon": "music"
+    },
+    {
+        "name": "Taygo",
+        "description": "A social food platform for discovering, rating, and recommending restaurants, with features for sharing experiences and exploring new places with friends.",
+        "url": "https://taygosocial.com",
+        "tags": [
+            "iOS",
+            "Swift",
+            "SwiftUI",
+            "MVVM",
+            "Firebase",
+            "Node.js",
+            "Google Cloud"
+        ],
+        "icon": "utensils"
+    },
+    {
+        "name": "Prism Finance",
+        "description": "Prism Finance is a proprietary platform for stock analysis, trend discovery, buy/sell signal detection, portfolio management, stock screening, and advanced market queries.",
+        "type": "Contract Project",
+        "tags": [
+            "React",
+            "Typescript",
+            "Python",
+            "FastAPI",
+            "Firebase",
+            "PostgreSQL",
+            "Sevalla"
+        ],
+        "icon": "dollar"
+    },
+    {
+        "name": "CardioLog",
+        "description": "A native mobile cardiovascular health log designed to help individuals track, monitor, and manage key heart health metrics over time.",
+        "type": "Contract Project",
+        "tags": [
+            "iOS",
+            "Swift",
+            "SwiftUI",
+            "SwiftData",
+            "MVVM",
+            "Swift Data"
+        ],
+        "icon": "heart"
+    },
+    {
+        "name": "Stash",
+        "description": "A budgeting application that uses AI-powered transaction categorization and spending analysis to help users track expenses, maintain budgets, and receive smart alerts.",
+        "type": "Contract Project",
+        "tags": [
+            "React",
+            "Typescript",
+            "Node.js",
+            "Firebase",
+            "Google Cloud"
+        ],
+        "icon": "feather"
+    },
+    {
+        "name": "Quil",
+        "description": "A white-label native mobile platform for authors to host audiobooks, manage subscriptions, sell digital content, and engage directly with their audience.",
+        "type": "Contract Project",
+        "tags": [
+            "iOS",
+            "Swift",
+            "SwiftUI",
+            "MVVM",
+            "Node.js",
+            "Firebase",
+            "Google Cloud",
+            "E-commerce"
+        ],
+        "icon": "feather"
+    }
+]
 }

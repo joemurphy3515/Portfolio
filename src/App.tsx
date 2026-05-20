@@ -11,6 +11,7 @@ import {
   Layers,
   Sparkles,
   ChevronRight,
+  ExternalLink,
 } from "lucide-react";
 import data from "./data.json";
 import "./App.css";
@@ -312,7 +313,23 @@ const App = () => {
                     <h3 className="spotlight-details-title">
                       {currentProject.name}
                     </h3>
-                    <span className="spotlight-status-pill">Active Build</span>
+                    {currentProject.url ? (
+                      <a
+                        href={currentProject.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="spotlight-link-pill"
+                      >
+                        <span>
+                          {currentProject.url.replace("https://", "")}
+                        </span>
+                        <ExternalLink size={12} />
+                      </a>
+                    ) : currentProject.type ? (
+                      <span className="spotlight-status-pill">
+                        {currentProject.type}
+                      </span>
+                    ) : null}
                   </div>
                   <p className="spotlight-details-description">
                     {currentProject.description}

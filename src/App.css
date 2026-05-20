@@ -658,14 +658,37 @@ body {
   margin: 0;
   color: var(--text-primary);
 }
+
 .spotlight-status-pill {
   font-size: 11px;
-  color: #34c759;
-  background-color: rgba(52, 199, 89, 0.1);
-  padding: 3px 8px;
+  color: var(--text-secondary);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
   border-radius: 6px;
   font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.02);
 }
+
+.spotlight-link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--accent-orange);
+  background-color: rgba(128, 13, 222, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid rgba(128, 13, 222, 0.15);
+  transition: all 0.2s ease;
+}
+
+.spotlight-link-pill:hover {
+  background-color: rgba(128, 13, 222, 0.15);
+  color: var(--text-primary);
+}
+
 .spotlight-details-description {
   font-size: 13px;
   color: var(--text-secondary);
