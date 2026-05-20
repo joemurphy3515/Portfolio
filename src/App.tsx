@@ -143,12 +143,17 @@ const App = () => {
 
         <div className="interactive-node-display">
           <div className="node-center-frame">
-            <div className="node-avatar">JM</div>
-            <div className="node-label-tag">Joe Murphy</div>
+            <img
+              src="jm_image.jpg"
+              alt="Joe Murphy"
+              className="node-avatar-image"
+            />
           </div>
-          <div className="floating-node node-pm">Product Strategy</div>
+
+          <div className="floating-node node-pm">Product Manager</div>
           <div className="floating-node node-eng">Full-Stack Dev</div>
-          <div className="floating-node node-uiux">UI/UX Design</div>
+          <div className="floating-node node-founder">Founder</div>
+          <div className="floating-node node-uiux">UI/UX Designer</div>
           <div className="floating-node node-audio">Music Producer</div>
         </div>
       </header>
@@ -190,25 +195,37 @@ const App = () => {
             <h2 className="card-title">Skills & Expertise</h2>
             <div className="tags-flex-wrap">
               <span className="skill-tag">Product Management</span>
-              <span className="skill-tag">System Architecture</span>
+              <span className="skill-tag">Product Strategy</span>
+              <span className="skill-tag">Road Mapping</span>
+              <span className="skill-tag">Market Analysis </span>
               <span className="skill-tag">UI/UX Design</span>
-              <span className="skill-tag">SwiftUI / iOS</span>
-              <span className="skill-tag">React & TypeScript</span>
-              <span className="skill-tag">Python / FastAPI</span>
-              <span className="skill-tag">Audio Production</span>
+              <span className="skill-tag">Full-Stack Engineering</span>
+              <span className="skill-tag">API Integrations</span>
+              <span className="skill-tag">Agile / Scrum</span>
+              <span className="skill-tag">Technical Leadership</span>
+              <span className="skill-tag">Product Launch & Iteration</span>
             </div>
           </section>
 
           <section className="bento-card card-stacks">
-            <h2 className="card-title">Ecosystem</h2>
+            <h2 className="card-title">Technical Proficiency</h2>
             <p className="stacks-description">
-              Core architectures designed for production readiness.
+              Core technologies and frameworks used across production platforms.
             </p>
             <div className="stacks-mini-grid">
+              <div className="stack-mini-pill">Swift</div>
               <div className="stack-mini-pill">SwiftUI</div>
-              <div className="stack-mini-pill">FastAPI</div>
               <div className="stack-mini-pill">React</div>
+              <div className="stack-mini-pill">TypeScript</div>
+              <div className="stack-mini-pill">Node.js</div>
+              <div className="stack-mini-pill">Express</div>
+              <div className="stack-mini-pill">Python</div>
+              <div className="stack-mini-pill">FastAPI</div>
+              <div className="stack-mini-pill">Firebase</div>
               <div className="stack-mini-pill">PostgreSQL</div>
+              <div className="stack-mini-pill">Google Cloud</div>
+              <div className="stack-mini-pill">Figma</div>
+              <div className="stack-mini-pill">JIRA</div>
             </div>
           </section>
         </div>
