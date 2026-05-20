@@ -114,6 +114,13 @@ const App = () => {
           >
             <Briefcase size={18} />
           </button>
+          <button
+            onClick={(e) => handleAnchorClick(e, "ventures")}
+            className={`nav-icon-link ${activeSection === "ventures" ? "active" : ""}`}
+            title="Project Highlights"
+          >
+            <Layers size={18} />
+          </button>
         </div>
         <button className="say-hello-cta" onClick={() => scrollToId("contact")}>
           Welcome! 👋
@@ -128,7 +135,8 @@ const App = () => {
           </span>
           <h1 className="main-headline">
             I’m Joe, a <strong>product engineer</strong> blending product,
-            design, and engineering experience to build thoughtful software experiences.
+            design, and engineering experience to build thoughtful software
+            experiences.
           </h1>
         </div>
 
