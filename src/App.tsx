@@ -10,6 +10,7 @@ import {
   Briefcase,
   Layers,
   Sparkles,
+  ChevronRight,
 } from "lucide-react";
 import data from "./data.json";
 import "./App.css";
@@ -20,9 +21,11 @@ const App = () => {
     "home" | "work" | "ventures" | "contact"
   >("home");
   const [copied, setCopied] = useState(false);
+  const [selectedProjectIdx, setSelectedProjectIdx] = useState(0);
 
   const workHistory = data.workHistory || [];
   const projects = data.projects || [];
+  const currentProject = projects[selectedProjectIdx] || null;
 
   const sectionIds = useMemo(
     () => ["home", "work", "ventures", "contact"] as const,
@@ -92,7 +95,6 @@ const App = () => {
 
   return (
     <div className="portfolio-dark-theme" id="home">
-      {/* Floating Top Navbar */}
       <nav className="floating-navbar" ref={navRef}>
         <div className="nav-profile-badge">
           <div className="avatar-placeholder">JM</div>
@@ -108,16 +110,9 @@ const App = () => {
           <button
             onClick={(e) => handleAnchorClick(e, "work")}
             className={`nav-icon-link ${activeSection === "work" ? "active" : ""}`}
-            title="Experience"
+            title="Experience & Projects"
           >
             <Briefcase size={18} />
-          </button>
-          <button
-            onClick={(e) => handleAnchorClick(e, "ventures")}
-            className={`nav-icon-link ${activeSection === "ventures" ? "active" : ""}`}
-            title="Ventures"
-          >
-            <Layers size={18} />
           </button>
         </div>
         <button className="say-hello-cta" onClick={() => scrollToId("contact")}>
@@ -125,7 +120,6 @@ const App = () => {
         </button>
       </nav>
 
-      {/* Main Hero Layout Grid */}
       <header className="hero-grid-section">
         <div className="hero-left-intro">
           <span className="availability-tag">
@@ -138,7 +132,6 @@ const App = () => {
           </h1>
         </div>
 
-        {/* Dynamic Interactive Avatar Node Graphic */}
         <div className="interactive-node-display">
           <div className="node-center-frame">
             <div className="node-avatar">JM</div>
@@ -151,34 +144,39 @@ const App = () => {
         </div>
       </header>
 
-      {/* Grid Dashboard Widgets */}
-      <main className="dashboard-bento-grid">
-        {/* Experience Widget */}
-        <section className="bento-card card-experience" id="work">
+      <main className="dashboard-bento-grid" id="work">
+        <section className="bento-card card-experience">
           <div className="card-header-row">
             <h2 className="card-title">Experience</h2>
             <span className="card-subtitle-metric">12+ Years</span>
           </div>
-          <div className="timeline-list">
-            {workHistory.map((job: any, idx: number) => (
-              <div className="timeline-item" key={idx}>
-                <div className="timeline-dot-connector"></div>
-                <div className="timeline-meta">
-                  <div className="company-title">{job.company}</div>
-                  <div className="role-tenure-row">
-                    <span className="role-text">{job.role}</span>
-                    <span className="date-text">{job.period}</span>
+          <div className="timeline-scroll-container">
+            <div className="timeline-list">
+              {workHistory.map((job: any, idx: number) => (
+                <div className="timeline-item" key={idx}>
+                  <div className="timeline-dot-connector"></div>
+                  <div className="timeline-meta">
+                    <div className="company-title">{job.company}</div>
+                    <div className="role-tenure-row">
+                      <span className="role-text">{job.role}</span>
+                      <span className="date-text">{job.period}</span>
+                    </div>
+                    <p className="timeline-brief">{job.description}</p>
+                    {job.highlights && (
+                      <ul className="timeline-highlights-inline">
+                        {job.highlights.map((h: string, i: number) => (
+                          <li key={i}>{h}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
-                  <p className="timeline-brief">{job.description}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Dynamic Stack & Skills Container */}
         <div className="bento-sub-column">
-          {/* Skills & Expertise */}
           <section className="bento-card card-skills">
             <h2 className="card-title">Skills & Expertise</h2>
             <div className="tags-flex-wrap">
@@ -192,32 +190,20 @@ const App = () => {
             </div>
           </section>
 
-          {/* Essential Stacks */}
-          <section className="bento-card card-stacks" id="ventures">
-            <h2 className="card-title">Venture Projects & Ecosystems</h2>
+          <section className="bento-card card-stacks">
+            <h2 className="card-title">Ecosystem</h2>
             <p className="stacks-description">
-              Building automated platforms, tracking apps, and discovery
-              interfaces.
+              Core architectures designed for production readiness.
             </p>
-            <div className="projects-mini-list">
-              {projects.map((project: any, idx: number) => (
-                <div className="mini-project-row" key={idx}>
-                  <div className="project-bullet-icon">
-                    <Sparkles size={14} className="accent-color" />
-                  </div>
-                  <div className="mini-project-details">
-                    <div className="mini-project-name">{project.name}</div>
-                    <div className="mini-project-tags">
-                      {project.tags?.join(" • ")}
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="stacks-mini-grid">
+              <div className="stack-mini-pill">SwiftUI</div>
+              <div className="stack-mini-pill">FastAPI</div>
+              <div className="stack-mini-pill">React</div>
+              <div className="stack-mini-pill">PostgreSQL</div>
             </div>
           </section>
         </div>
 
-        {/* Connect & Communication Widget */}
         <section className="bento-card card-connect" id="contact">
           <h2 className="card-title">Connect</h2>
           <div className="social-links-stack">
@@ -227,7 +213,7 @@ const App = () => {
               rel="noreferrer"
               className="social-row-item"
             >
-              <Linkedin size={18} /> <span>LinkedIn</span>
+              <Linkedin size={16} /> <span>LinkedIn</span>
             </a>
             <a
               href="https://twitter.com"
@@ -235,15 +221,7 @@ const App = () => {
               rel="noreferrer"
               className="social-row-item"
             >
-              <Twitter size={18} /> <span>X (Previously Twitter)</span>
-            </a>
-            <a
-              href="https://telegram.org"
-              target="_blank"
-              rel="noreferrer"
-              className="social-row-item"
-            >
-              <Mail size={18} /> <span>Telegram</span>
+              <Twitter size={16} /> <span>Twitter</span>
             </a>
             <a
               href="https://instagram.com"
@@ -251,29 +229,23 @@ const App = () => {
               rel="noreferrer"
               className="social-row-item"
             >
-              <Instagram size={18} /> <span>Instagram</span>
+              <Instagram size={16} /> <span>Instagram</span>
             </a>
           </div>
 
           <div className="email-action-footer-box">
-            <div className="action-text-group">
-              <span className="action-label">Let's Work Together!</span>
-              <span className="action-subtext">
-                Click below to copy email address
-              </span>
-            </div>
             <button
               className="email-copy-trigger-pill"
               onClick={handleCopyEmail}
             >
               {copied ? (
                 <>
-                  <Check size={16} className="text-success" />
-                  <span>Copied!</span>
+                  <Check size={14} className="text-success" />
+                  <span>Copied Address!</span>
                 </>
               ) : (
                 <>
-                  <Copy size={16} />
+                  <Copy size={14} />
                   <span>jmurphy2591@gmail.com</span>
                 </>
               )}
@@ -281,6 +253,83 @@ const App = () => {
           </div>
         </section>
       </main>
+
+      <section className="project-spotlight-section" id="ventures">
+        <div className="spotlight-header">
+          <div className="spotlight-title-group">
+            <span className="spotlight-pre">Deep Dive</span>
+            <h2 className="spotlight-main-title">Venture Projects</h2>
+          </div>
+          <div className="spotlight-horizontal-divider"></div>
+        </div>
+
+        <div className="spotlight-workspace-grid">
+          <div className="spotlight-selector-side">
+            {projects.map((project: any, idx: number) => (
+              <button
+                key={idx}
+                className={`spotlight-menu-row ${selectedProjectIdx === idx ? "active" : ""}`}
+                onClick={() => setSelectedProjectIdx(idx)}
+              >
+                <div className="menu-row-content">
+                  <span className="project-sequence-num">0{idx + 1}</span>
+                  <span className="project-menu-name">{project.name}</span>
+                </div>
+                <ChevronRight size={16} className="menu-arrow-icon" />
+              </button>
+            ))}
+          </div>
+
+          <div className="spotlight-preview-display-side">
+            {currentProject && (
+              <div className="spotlight-display-card-wrapper">
+                <div className="mockup-window-canvas">
+                  <div className="mockup-window-header-bar">
+                    <div className="mockup-window-dots">
+                      <span className="dot dot-r"></span>
+                      <span className="dot dot-y"></span>
+                      <span className="dot dot-g"></span>
+                    </div>
+                    <div className="mockup-window-address-bar">
+                      {currentProject.name.toLowerCase()}.app
+                    </div>
+                  </div>
+                  <div className="mockup-window-interior-view">
+                    <div className="mockup-graphic-abstract-panel">
+                      <div className="abstract-glow-orb"></div>
+                      <Sparkles size={40} className="abstract-center-icon" />
+                      <div className="abstract-ui-stripes">
+                        <span className="stripe w-70"></span>
+                        <span className="stripe w-50"></span>
+                        <span className="stripe w-85"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="spotlight-text-details">
+                  <div className="spotlight-details-header">
+                    <h3 className="spotlight-details-title">
+                      {currentProject.name}
+                    </h3>
+                    <span className="spotlight-status-pill">Active Build</span>
+                  </div>
+                  <p className="spotlight-details-description">
+                    {currentProject.description}
+                  </p>
+                  <div className="spotlight-details-tags">
+                    {currentProject.tags?.map((tag: string, i: number) => (
+                      <span key={i} className="spotlight-detail-tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
