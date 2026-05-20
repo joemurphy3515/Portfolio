@@ -598,12 +598,23 @@ body {
 
 .mockup-window-interior-view {
   height: 180px;
-  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   background: radial-gradient(circle at top left, #1c1412, #141415);
+  overflow: hidden;
+}
+
+.mockup-window-interior-view:not(.has-image) {
+  padding: 20px;
+}
+
+.mockup-project-screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .mockup-graphic-abstract-panel {

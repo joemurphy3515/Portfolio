@@ -292,19 +292,30 @@ const App = () => {
                       <span className="dot dot-g"></span>
                     </div>
                     <div className="mockup-window-address-bar">
-                      {currentProject.name.toLowerCase()}.app
+                      {currentProject.name.toLowerCase()}
                     </div>
                   </div>
-                  <div className="mockup-window-interior-view">
-                    <div className="mockup-graphic-abstract-panel">
-                      <div className="abstract-glow-orb"></div>
-                      <Sparkles size={40} className="abstract-center-icon" />
-                      <div className="abstract-ui-stripes">
-                        <span className="stripe w-70"></span>
-                        <span className="stripe w-50"></span>
-                        <span className="stripe w-85"></span>
+
+                  <div
+                    className={`mockup-window-interior-view ${currentProject.image ? "has-image" : ""}`}
+                  >
+                    {currentProject.image ? (
+                      <img
+                        src={currentProject.image}
+                        alt={`${currentProject.name} interface mockup`}
+                        className="mockup-project-screenshot"
+                      />
+                    ) : (
+                      <div className="mockup-graphic-abstract-panel">
+                        <div className="abstract-glow-orb"></div>
+                        <Sparkles size={40} className="abstract-center-icon" />
+                        <div className="abstract-ui-stripes">
+                          <span className="stripe w-70"></span>
+                          <span className="stripe w-50"></span>
+                          <span className="stripe w-85"></span>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
 

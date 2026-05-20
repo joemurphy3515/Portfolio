@@ -89,6 +89,7 @@
         "name": "Augio",
         "description": "A music streaming, discovery, and curation platform focused on helping independent artists reach new listeners through location-based music discovery.",
         "url": "https://augio.io",
+        "image": "augio_screenshot.png",
         "tags": [
             "iOS",
             "Swift",
@@ -105,6 +106,7 @@
         "name": "Taygo",
         "description": "A social food platform for discovering, rating, and recommending restaurants, with features for sharing experiences and exploring new places with friends.",
         "url": "https://taygosocial.com",
+        "image": "taygo_screenshot.png",
         "tags": [
             "iOS",
             "Swift",
@@ -120,6 +122,7 @@
         "name": "Prism Finance",
         "description": "Prism Finance is a proprietary platform for stock analysis, trend discovery, buy/sell signal detection, portfolio management, stock screening, and advanced market queries.",
         "type": "Contract Project",
+        "image": "prism_screenshot.png",
         "tags": [
             "React",
             "Typescript",
