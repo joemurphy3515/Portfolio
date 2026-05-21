@@ -746,8 +746,9 @@ body {
     flex-direction: column;
   }
 
-  .card-experience {
-    height: 500px;
+ .card-experience {
+    flex: none; 
+    height: 500px; 
   }
 
   .stacks-mini-grid {
