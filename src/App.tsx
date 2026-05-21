@@ -156,7 +156,7 @@ const App = () => {
         </div>
       </header>
 
-      <main className="dashboard-bento-grid" id="work">
+      <main className="dashboard-flex-layout" id="work">
         <section className="bento-card card-experience">
           <div className="card-header-row">
             <h2 className="card-title">Experience</h2>
@@ -188,86 +188,88 @@ const App = () => {
           </div>
         </section>
 
-        <section className="bento-card card-skills">
-          <h2 className="card-title">Skills & Expertise</h2>
+        <div className="dashboard-right-column">
+          <div className="dashboard-right-top-row">
+            <section className="bento-card card-skills">
+              <h2 className="card-title">Skills & Expertise</h2>
+              <div className="tags-flex-wrap">
+                <span className="skill-tag">Product Management</span>
+                <span className="skill-tag">Product Strategy</span>
+                <span className="skill-tag">Road Mapping</span>
+                <span className="skill-tag">Market Analysis </span>
+                <span className="skill-tag">UI/UX Design</span>
+                <span className="skill-tag">Full-Stack Engineering</span>
+                <span className="skill-tag">API Integrations</span>
+                <span className="skill-tag">Agile / Scrum</span>
+                <span className="skill-tag">Technical Leadership</span>
+                <span className="skill-tag">Product Launch & Iteration</span>
+              </div>
+            </section>
 
-          <div className="tags-flex-wrap">
-            <span className="skill-tag">Product Management</span>
-            <span className="skill-tag">Product Strategy</span>
-            <span className="skill-tag">Road Mapping</span>
-            <span className="skill-tag">Market Analysis </span>
-            <span className="skill-tag">UI/UX Design</span>
-            <span className="skill-tag">Full-Stack Engineering</span>
-            <span className="skill-tag">API Integrations</span>
-            <span className="skill-tag">Agile / Scrum</span>
-            <span className="skill-tag">Technical Leadership</span>
-            <span className="skill-tag">Product Launch & Iteration</span>
+            <section className="bento-card card-connect" id="contact">
+              <h2 className="card-title">Connect</h2>
+              <div className="social-links-stack">
+                <a
+                  href="https://www.linkedin.com/in/joemurphy2591/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-row-item"
+                >
+                  <Linkedin size={16} /> <span>Linkedin</span>
+                </a>
+                <a
+                  href="https://github.com/joemurphy3515"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-row-item"
+                >
+                  <Github size={16} /> <span>Github</span>
+                </a>
+              </div>
+
+              <div className="email-action-footer-box">
+                <button
+                  className="email-copy-trigger-pill"
+                  onClick={handleCopyEmail}
+                >
+                  {copied ? (
+                    <>
+                      <Check size={14} className="text-success" />
+                      <span>Copied Address!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy size={14} />
+                      <span>jmurphy2591@gmail.com</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </section>
           </div>
-        </section>
 
-        <section className="bento-card card-connect" id="contact">
-          <h2 className="card-title">Connect</h2>
-          <div className="social-links-stack">
-            <a
-              href="https://www.linkedin.com/in/joemurphy2591/"
-              target="_blank"
-              rel="noreferrer"
-              className="social-row-item"
-            >
-              <Linkedin size={16} /> <span>Linkedin</span>
-            </a>
-            <a
-              href="https://github.com/joemurphy3515"
-              target="_blank"
-              rel="noreferrer"
-              className="social-row-item"
-            >
-              <Github size={16} /> <span>Github</span>
-            </a>
-          </div>
-
-          <div className="email-action-footer-box">
-            <button
-              className="email-copy-trigger-pill"
-              onClick={handleCopyEmail}
-            >
-              {copied ? (
-                <>
-                  <Check size={14} className="text-success" />
-                  <span>Copied Address!</span>
-                </>
-              ) : (
-                <>
-                  <Copy size={14} />
-                  <span>jmurphy2591@gmail.com</span>
-                </>
-              )}
-            </button>
-          </div>
-        </section>
-
-        <section className="bento-card card-stacks">
-          <h2 className="card-title">Technical Proficiency</h2>
-          <p className="stacks-description">
-            Technologies and frameworks I've used across projects.
-          </p>
-
-          <div className="stacks-mini-grid">
-            <div className="stack-mini-pill">Swift</div>
-            <div className="stack-mini-pill">SwiftUI</div>
-            <div className="stack-mini-pill">React</div>
-            <div className="stack-mini-pill">TypeScript</div>
-            <div className="stack-mini-pill">Node.js</div>
-            <div className="stack-mini-pill">Express</div>
-            <div className="stack-mini-pill">Python</div>
-            <div className="stack-mini-pill">FastAPI</div>
-            <div className="stack-mini-pill">Firebase</div>
-            <div className="stack-mini-pill">PostgreSQL</div>
-            <div className="stack-mini-pill">Google Cloud</div>
-            <div className="stack-mini-pill">Figma</div>
-            <div className="stack-mini-pill">JIRA</div>
-          </div>
-        </section>
+          <section className="bento-card card-stacks">
+            <h2 className="card-title">Technical Proficiency</h2>
+            <p className="stacks-description">
+              Technologies and frameworks I've used across projects.
+            </p>
+            <div className="stacks-mini-grid">
+              <div className="stack-mini-pill">Swift</div>
+              <div className="stack-mini-pill">SwiftUI</div>
+              <div className="stack-mini-pill">React</div>
+              <div className="stack-mini-pill">TypeScript</div>
+              <div className="stack-mini-pill">Node.js</div>
+              <div className="stack-mini-pill">Express</div>
+              <div className="stack-mini-pill">Python</div>
+              <div className="stack-mini-pill">FastAPI</div>
+              <div className="stack-mini-pill">Firebase</div>
+              <div className="stack-mini-pill">PostgreSQL</div>
+              <div className="stack-mini-pill">Google Cloud</div>
+              <div className="stack-mini-pill">Figma</div>
+              <div className="stack-mini-pill">JIRA</div>
+            </div>
+          </section>
+        </div>
       </main>
 
       <section className="project-spotlight-section" id="ventures">
